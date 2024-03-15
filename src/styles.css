@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+}
