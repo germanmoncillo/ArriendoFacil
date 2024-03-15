@@ -4,6 +4,7 @@ import { AcercaDeComponent } from './page/acerca-de/acerca-de.component';
 import { AlcanceComponent } from './page/alcance/alcance.component';
 import { ContactoComponent } from './page/contacto/contacto.component';
 import { QuienesSomosComponent } from './page/quienes-somos/quienes-somos.component';
+import { RegistroComponent } from './page/registro/registro.component';
 
 
 export const routes: Routes = [
@@ -31,5 +32,10 @@ export const routes: Routes = [
         path: 'quienessomos',
         title: 'Quienes Somos',
         component: QuienesSomosComponent,
+    },
+    {
+        path: 'registro',
+        title: 'Registro',
+        component: RegistroComponent,
     },
 ];
