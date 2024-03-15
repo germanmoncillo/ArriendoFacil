@@ -1,0 +1,27 @@
+<!-- @if (aModal) {
+
+<div class="position-fixed d-flex">
+    <div class="position-absolute bg-black "></div>
+    <div class="position-relative w-50" style="z-index: 2;">
+        <div>HOLA MUNDITO</div>
+        <button (click)="cModal()">cerrar</button>
+    </div>
+</div> 
+} -->
+@if (aModal) {
+<div class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <ng-content></ng-content>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- div contenedero para que sea fijo posicion -->
