@@ -15,7 +15,7 @@ header{
     padding: 0 2rem;
 }
 .main-header{
-  background: linear-gradient(45deg,red,blue,green,black);
+  background: linear-gradient(45deg,orange,rgb(0, 255, 0),rgb(213, 199, 69),rgb(90, 9, 9));
   background-size: 400% 400%;
   position: relative;
   /*background-color: #fff;*/

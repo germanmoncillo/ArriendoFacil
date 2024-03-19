@@ -4,6 +4,9 @@ import { AcercaDeComponent } from './page/acerca-de/acerca-de.component';
 import { AlcanceComponent } from './page/alcance/alcance.component';
 import { ContactoComponent } from './page/contacto/contacto.component';
 import { QuienesSomosComponent } from './page/quienes-somos/quienes-somos.component';
+import { RegistroComponent } from './page/registro/registro.component';
+import { AgregarclientesComponent } from './page/clientes/agregarclientes/agregarclientes.component';
+import { VerclientesComponent } from './page/clientes/verclientes/verclientes.component';
 
 
 export const routes: Routes = [
@@ -32,4 +35,16 @@ export const routes: Routes = [
         title: 'Quienes Somos',
         component: QuienesSomosComponent,
     },
+    {
+        path: 'registro',
+        title: 'Registro',
+        component: RegistroComponent,
+    },
+    {
+        path: 'cliente',  // cyal es el path
+        title: 'clientes potenciales',// el nombre de la pagina
+        component: VerclientesComponent,   //componente como tal
+    }
+
+
 ];

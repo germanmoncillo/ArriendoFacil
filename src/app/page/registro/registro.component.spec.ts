@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnumComponent } from './enum.component';
+import { RegistroComponent } from './registro.component';
 
-describe('EnumComponent', () => {
-  let component: EnumComponent;
-  let fixture: ComponentFixture<EnumComponent>;
+describe('RegistroComponent', () => {
+  let component: RegistroComponent;
+  let fixture: ComponentFixture<RegistroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EnumComponent]
+      imports: [RegistroComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EnumComponent);
+    fixture = TestBed.createComponent(RegistroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
