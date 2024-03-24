@@ -12,13 +12,15 @@
                     <li><a [routerLink]="ROUTER_APP.CLIENTES" >Clientes</a></li>
                     <li><a [routerLink]="ROUTER_APP.ACERCA_DE">About</a></li>
                     <li><a [routerLink]="ROUTER_APP.CONTACTO">Contact</a></li>
+                   
                 </ul>
             </nav>
             <a routerLink="registro">
                 <button type="button" class="btn btn-secondary"> Sign-Up</button>
             </a>
             <a class="action_btn">
-                <button (click)="login()" type="button" class="btn btn-success">Login</button>
+                <li (click)="cerrarSesion()" 
+                class="btn btn-primary">Cerrar Sesión</li>
             </a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
