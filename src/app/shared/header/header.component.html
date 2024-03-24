@@ -3,17 +3,15 @@
         <div class="logo">
             <a routerLink="inicio">
                 <img src="../../../assets/logoWhite.png" alt="Logo del proyecto" class="logo">
-                ARRIENDOS FACIL CRM
+                <span class="logo-text">ARRIENDOS FACIL CRM</span>
             </a>
         </div>
             <nav>
                 <ul class="links">
-                    <li><a routerLink="inicio">inicio</a></li>
-                    <li><a routerLink="cliente">Clientes</a></li>
-                    <li><a routerLink="acercade">About</a></li>
-                    <li><a routerLink="alcance">Scope</a></li>
-                    <li><a routerLink="quienessomos">About Us</a></li>
-                    <li><a routerLink="contacto">Contact</a></li>
+                    <li><a [routerLink]="ROUTER_APP.INICIO">inicio</a></li>
+                    <li><a [routerLink]="ROUTER_APP.CLIENTES" >Clientes</a></li>
+                    <li><a [routerLink]="ROUTER_APP.ACERCA_DE">About</a></li>
+                    <li><a [routerLink]="ROUTER_APP.CONTACTO">Contact</a></li>
                 </ul>
             </nav>
             <a routerLink="registro">

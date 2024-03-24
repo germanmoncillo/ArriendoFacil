@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2'
+import { ROUTER_APP } from '../../core/enum/router.app';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,10 @@ import Swal from 'sweetalert2'
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+ get ROUTER_APP(){
+  return ROUTER_APP;
+ }
+
   login(){
     type LoginFormResult = {
       username: string

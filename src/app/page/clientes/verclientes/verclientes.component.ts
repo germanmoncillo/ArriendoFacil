@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../../../core/interfaces/cliente';
+
 
 
 import { AgregarclientesComponent } from '../agregarclientes/agregarclientes.component';
 import { ModalComponent } from "../../../components/modal/modal.component";
+import { Cliente } from '../../../core/interfaces/cliente';
 
 
 @Component({
