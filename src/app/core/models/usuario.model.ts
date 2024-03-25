@@ -5,10 +5,10 @@ export class UsuarioModel {
         public email:String,
         public tipoDocumento:String,
         public numeroDocumento:number,
-        public  login:String,
+        public login:String,
         public password:String,
         public rol:String,
-        public estaod:boolean,
+        public estado:boolean,
         public createdAt:Date,
     ){}
     }
