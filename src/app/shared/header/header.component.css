@@ -5,9 +5,13 @@ a{
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
+    transition: all 0.3s; /* Agregar transición para un cambio suave */
 }
+
+
 a:hover{
-    color: orange;
+    color: #CF6A8C;
+    
 }
 
 header{
@@ -15,7 +19,7 @@ header{
     padding: 0 2rem;
 }
 .main-header{
-  background: linear-gradient(45deg,orange,rgb(0, 255, 0),rgb(213, 199, 69),rgb(90, 9, 9));
+    background: linear-gradient(30deg,#011224, #1b3450, #021E3D, #1b3450,#b1f1fd);
   background-size: 400% 400%;
   position: relative;
   /*background-color: #fff;*/
@@ -43,21 +47,25 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a {
-    font-size: 1.5rem;
+
+
+
+.navbar .logo a .logo,
+.navbar .logo a .logo-text {
+    font-size: 1.1rem;
     font-weight: bold;
-}
-
-.navbar .logo img {   /*logo de la imagen*/
-    height: 50px;
-    width:  auto;
-    transition: all 0.3s;  /*la transicion para que no sea tan brusco*/
-}
-.navbar .logo img:hover{  /* logo imagen cuando crece a escala*/
-    transform: scale(1.2);
+    transition: all 0.3s;  /* Agregar transición para un cambio suave */
+    display: inline-block; /* Hacer que el elemento sea bloque para aplicar transformación */
 }
 
 
+.navbar .logo a:hover .logo,
+.navbar .logo a:hover .logo-text {
+    transform: scale(1.2); /* Hacer que el texto y el logo crezcan al pasar el cursor */
+}
+.navbar .logo a:hover .logo-text {
+    transform: scale(1.2) translateX(18px); /* Hacer que el texto crezca y se desplace hacia la derecha */
+}
 .navbar .links{
     display: flex;
     gap:2rem;
@@ -68,4 +76,4 @@ header{
     cursor: pointer;
     display: none;
 }
-/* seccion del buscador */
+

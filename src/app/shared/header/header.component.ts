@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2'
+import { ROUTER_APP } from '../../core/enum/router.app';
+
+import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +13,15 @@ import Swal from 'sweetalert2'
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  login(){
+ get ROUTER_APP(){
+  return ROUTER_APP;
+ }
+//inyectando sin contructor el cerrar sesion
+autenticacionservice = inject(AutenticacionService)
+  
+
+
+login(){
     type LoginFormResult = {
       username: string
       password: string
@@ -45,4 +56,9 @@ export class HeaderComponent {
       },
     })
   }
+
+  cerrarSesion(){
+this.autenticacionservice.logout();
+  }
+
 }
