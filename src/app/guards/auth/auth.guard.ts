@@ -11,12 +11,10 @@ const router = inject(Router);
 // si la respuesta de validateTOken es true o es false 
 return autenticacionService.validateToken().pipe(
   //validar si el Isautenticado existe como tal
-  tap((isAutenticado) =>  {
-    if(!isAutenticado) {
+    tap((isAutenticado) =>  {
+      if(!isAutenticado) {
       router.navigateByUrl(ROUTER_APP.AUTENTICACION);
- 
-
-  }
-})
-);
+      }
+    })
+  );
 };

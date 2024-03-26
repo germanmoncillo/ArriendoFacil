@@ -1,14 +1,14 @@
 export class UsuarioModel {
     constructor(
-        public readonly_id:String,
-        public nombre:String,
-        public email:String,
-        public tipoDocumento:String,
-        public numeroDocumento:number,
-        public login:String,
-        public password:String,
-        public rol:String,
-        public estado:boolean,
-        public createdAt:Date,
+        public readonly _id: string,
+        public nombre: string,
+        public email: string,
+        public tipoDocumento: string,
+        public numeroDocumento:string,
+        public login: string,
+        public password: string,
+        public rol: string,
+        public estado: boolean,
+        public createdAt: Date,
     ){}
-    }
+}

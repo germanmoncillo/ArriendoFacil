@@ -19,8 +19,6 @@ export class HeaderComponent {
 //inyectando sin contructor el cerrar sesion
 autenticacionservice = inject(AutenticacionService)
   
-
-
 login(){
     type LoginFormResult = {
       username: string

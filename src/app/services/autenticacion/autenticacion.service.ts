@@ -2,11 +2,17 @@ import { Injectable } from '@angular/core';
 import { UsuarioModel } from '../../core/models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { 
+  Observable, 
+  catchError, 
+  map, 
+  of, 
+  tap } from 'rxjs';
 import { LoginInterface } from '../../core/interfaces/login-interface';
 import { environment } from '../../../environments/environment';
 
 const base_url= environment.base_url;
+
 @Injectable({
   providedIn: 'root'
 })

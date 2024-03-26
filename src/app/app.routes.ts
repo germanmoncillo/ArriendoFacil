@@ -8,66 +8,75 @@ import { RegistroComponent } from './page/registro/registro.component';
 import { VerclientesComponent } from './page/clientes/verclientes/verclientes.component';
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
 import { authGuard } from './guards/auth/auth.guard';
+import { AgrearusuariosComponent } from './page/usuarios/agrearusuarios/agrearusuarios.component';
+import { VerusuariosComponent } from './page/usuarios/verusuarios/verusuarios.component';
 
 
 export const routes: Routes = [
     {
         path: 'auth',
-        title:"autenticacion",
+        title:"Autenticación",
         children:[
-            { path: 'login',component: AutenticacionComponent },
-          
+            { 
+                path: 'login',
+                title:"Iniciar sesión",
+                component: AutenticacionComponent
+            },    
         ],
     },
-
     {
         path: 'inicio',
         title: 'Inicio',
         canActivate: [authGuard],
         children: [
-    {
-         path:'', 
-         title: 'Inicio',   
-         component: HomeComponent
-    },
-    {
-        path: 'acercade',
-        title: 'Quienes somos',
-        component: AcercaDeComponent,
-    },
-    {
-        path: 'alcance',
-        title: 'Alcance del Proyecto',
-        component: AlcanceComponent,
-    },
-    {
-        path: 'contacto',
-        title: 'Contactenos',
-        component: ContactoComponent,
-    },
-    {
-        path: 'quienessomos',
-        title: 'Quienes Somos',
-        component: QuienesSomosComponent,
-    },
-    {
-        path: 'registro',
-        title: 'Registro',
-        component: RegistroComponent,
-    },
-    {
-        path: 'cliente',  // cyal es el path
-        title: 'clientes potenciales',// el nombre de la pagina
-        component: VerclientesComponent,   //componente como tal
-    },
-    // {
-    //     path: 'login',  // cyal es el path o ruta
-    //     title: 'Autenticacion',// el nombre de la pagina
-    //     component: AutenticacionComponent,   //componente como tal
-    // }
-
-],
+            {
+                path:'', 
+                 title: 'Inicio',   
+                 component: HomeComponent
+            },
+            { 
+                path: 'usuarios',
+                title:"Ver Usuarios",
+                component: VerusuariosComponent
+            },
+            { 
+                path: 'agregarusuario',
+                title:"Agregar Usuarios",
+                component: AgrearusuariosComponent
+            },
+            {
+                path: 'acercade',
+                title: 'Quienes somos',
+                component: AcercaDeComponent,
+            },
+            {
+                path: 'alcance',
+                title: 'Alcance del Proyecto',
+                component: AlcanceComponent,
+            },
+            {
+                path: 'contacto',
+                title: 'Contactenos',
+                component: ContactoComponent,
+            },
+            {
+                path: 'quienessomos',
+                title: 'Quienes Somos',
+                component: QuienesSomosComponent,
+            },
+            {
+                path: 'registro',
+                title: 'Registro',
+                component: RegistroComponent,
+            },
+            {
+                path: 'cliente',  // cyal es el path
+                title: 'clientes potenciales',// el nombre de la pagina
+                component: VerclientesComponent,   //componente como tal
+            },
+    ],
 },
 // si no cuenta con la ruta , redirecciona al login
-{path: '**',redirectTo:'auth/login', pathMatch:'full'},
+{path: '**', redirectTo:'auth/login', pathMatch:'full'},
+
 ];
