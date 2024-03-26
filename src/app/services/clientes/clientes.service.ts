@@ -15,30 +15,30 @@ export class ClientesService {
 
   constructor(private httpClient:HttpClient) { }
 
-  // get token(): string {
-  //   return localStorage.getItem('token') || '';
-  // }
+  get token(): string {
+    return localStorage.getItem('token') || '';
+  }
 
 
-  // get headers () {
-  //   return {
-  //     headers : {
-  //       "x-token": this.token,
-  //     },
-  //   }
-  // };
+  get headers () {
+    return {
+      headers : {
+        "x-token": this.token,
+      },
+    }
+  };
 
   //entonces cuando coloco this.headers es que me viene con el token para 
   //creacion de cliente
 
 
   getClientes(){
-    return this.httpClient.get(`${base_url}/cliente` );
+    return this.httpClient.get(`${base_url}/cliente`,  );
   }
 // como la voy a recibir del formulario recibo toda la data del cliente 
   crearClientes(cliente: CLienteModel)
 {
-  return this.httpClient.post(`${base_url}/cliente`, cliente);
+  return this.httpClient.post(`${base_url}/cliente`, cliente, );
 
 }
 
