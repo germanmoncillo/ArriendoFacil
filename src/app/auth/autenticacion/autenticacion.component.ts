@@ -25,7 +25,7 @@ export class AutenticacionComponent implements OnInit{
   constructor(
      private formBuilder: FormBuilder,
      private autenticacionService: AutenticacionService ,
-     private ruta: Router
+     private ruta: Router,
      ) {}
 
   
@@ -46,6 +46,7 @@ export class AutenticacionComponent implements OnInit{
   }
  
 realizarlogin(){
+  console.log(this.loginForm);
   if (this.loginForm.invalid) {
   return;
   }

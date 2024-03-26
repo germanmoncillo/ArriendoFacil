@@ -10,4 +10,8 @@ const base_url = environment.base_url;
 export class UsuariosService {
 
   constructor( private httpClient: HttpClient) { }
+
+  getUsuarios(){
+    return this.httpClient.get(`${base_url}/usuario`);
+  }
 }
