@@ -6,6 +6,7 @@
                 <span class="logo-text">ARRIENDOS FACIL CRM</span>
             </a>
         </div>
+        
             <nav>
                 <ul class="links">
                     <li><a [routerLink]="ROUTER_APP.INICIO">inicio</a></li>
@@ -14,14 +15,17 @@
                     <li><a [routerLink]="ROUTER_APP.CONTACTO">Contact</a></li>
                     <li><a [routerLink]="ROUTER_APP.USUARIOS">Usuarios</a></li>                   
                 </ul>
+            
             </nav>
             <!-- <a routerLink="registro">
                 <button type="button" class="btn btn-secondary"> Sign-Up</button>
             </a> -->
+            <!-- <ng-template [appPermisos]="['ADMIN']"> -->
             <a class="action_btn">
                 <li (click)="cerrarSesion()" 
                 class="btn btn-primary">Cerrar Sesión</li>
             </a>
+        <!-- </ng-template> -->
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>        

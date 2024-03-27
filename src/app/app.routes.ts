@@ -7,12 +7,14 @@ import { QuienesSomosComponent } from './page/quienes-somos/quienes-somos.compon
 import { RegistroComponent } from './page/registro/registro.component';
 import { VerclientesComponent } from './page/clientes/verclientes/verclientes.component';
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
-import { authGuard } from './guards/auth/auth.guard';
 import { AgrearusuariosComponent } from './page/usuarios/agrearusuarios/agrearusuarios.component';
 import { VerusuariosComponent } from './page/usuarios/verusuarios/verusuarios.component';
 
 
 export const routes: Routes = [
+
+
+    
     {
         path: 'auth',
         title:"Autenticación",
