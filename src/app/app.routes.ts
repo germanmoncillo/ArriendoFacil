@@ -27,7 +27,7 @@ export const routes: Routes = [
     {
         path: 'inicio',
         title: 'Inicio',
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
         children: [
             {
                 path:'', 
