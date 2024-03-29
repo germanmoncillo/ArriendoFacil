@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { config } from '../../../../environments/configuration/config';
 import { AutenticacionService } from '../../../services/autenticacion/autenticacion.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { ROUTER_APP } from '../../../core/enum/router.app';
 
 
 @Component({
@@ -43,5 +45,32 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
     });
   }
 
-}
+  eliminarUsuario(id: string) {
+    if (id === this.usuarioLogin._id) {
+      Swal.fire('Error!', 'No puede eliminar este usuario', 'error');
+    } else {
+      this.usuarioService.eliminarUnUsuario(id).subscribe((resp: any) => {
+        this.cargarUsuarios();
+        Swal.fire(
+          'Eliminado',
+          `Se eliminé el usuario ${resp.usuario.nombre}`,
+          'success'
+        );
+      });
+    }
+  }
 
+  actualizarRol(usuario: UsuarioModel) {
+    this.usuarioService.actualizarUnUsuario(usuario).subscribe((resp: any) => {
+      Swal.fire(
+        'Actualizado',
+        `Se actualizó el usuario ${resp.usuario.nombre}`,
+        'success'
+      );
+    });
+  }
+
+  agregarUsuario() {
+    this.router.navigateByUrl(ROUTER_APP.AGREGARUSUARIO);
+  }
+}
