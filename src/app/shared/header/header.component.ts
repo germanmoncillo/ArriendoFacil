@@ -1,20 +1,25 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component, Inject, NgModule, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2'
 import { ROUTER_APP } from '../../core/enum/router.app';
 
 import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
+import { PermisosDirective } from '../../core/directives/permisos/permisos.directive';
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,PermisosDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
+
 export class HeaderComponent {
  get ROUTER_APP(){
   return ROUTER_APP;
+
  }
 //inyectando sin contructor el cerrar sesion
 autenticacionservice = inject(AutenticacionService)

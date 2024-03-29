@@ -14,6 +14,10 @@ return autenticacionService.validateToken().pipe(
     tap((isAutenticado) =>  {
       if(!isAutenticado) {
       router.navigateByUrl(ROUTER_APP.AUTENTICACION);
+
+
+
+      
       }
     })
   );

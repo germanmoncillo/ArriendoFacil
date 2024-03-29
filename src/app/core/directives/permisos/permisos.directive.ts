@@ -1,76 +1,79 @@
-import { Directive,Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { UsuarioModel } from '../../models/usuario.model';
+import { Directive,Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { AutenticacionService } from '../../../services/autenticacion/autenticacion.service';
+import { Subject, merge, takeUntil } from 'rxjs';
 
 @Directive({
   selector: '[appPermisos]' , // Ejemplo de seleccionar un texto 
   // si estan usando modulos le dice que si o si no que no 
   standalone: true,
 })
-export class PermisosDirective implements OnInit {
 
-  private usuario: UsuarioModel;
-//permisos es un array vacio
+export class PermisosDirective implements OnInit , OnDestroy {
 
- private permisos: string[];
+  @Input('appPermisos') permisos:string[];
 
+  private dessuscribirse = new Subject<void>();
 
   constructor(
     private templateRef :TemplateRef<any>,
     //ese view container me permite ver y demas 
     private viewContainer: ViewContainerRef,
     //inyectando los permisos de los usuarios 
-    private autenticacionService: AutenticacionService,
+    private autenticacionService: AutenticacionService
     //template
-   
     ) {}
 
-    
-ngOnInit(): void {
-// en loa varibale usuario me estoy llevando el token como tal , Guardamee en el usuaioro lo que este hay 
+    // cuando se actualiza la pagina con el NGOniit
+  ngOnInit(): void {
+  
+    const loginLogoutObservable = merge(
+      // cuando nos logeemos creamos el evento que esta en el otro compomente 
+      this.autenticacionService.onLogin,
+      this.autenticacionService.onLogout
 
-this.usuario = this.autenticacionService.usuario;
-this.actualizarVista();
-}
-
+      //hace misma funcion cuando me logea o me desloguea me oculta en los diferentes elementos 
+      // amas actualizar cada que se hace cuando logeo 
+    );
+    // esta suscripcion va a ocurrir hasta que me descubrirme, hacer ese evento hasta que me quite la suscripcion
+    loginLogoutObservable.pipe(takeUntil(this.dessuscribirse)).subscribe(() => {
+      this.actualizarVista();
+    });
+    this.actualizarVista();
+  }
 // set es para traer informacion
-@Input()
 
-set appPermisos(val: Array<string>) {
-  this.permisos = val;
-}
+    // cuando se eejctua la accion desde el hader llamo la directiva , hago un NgOinit cuando termin
+    // no hace nada el header llama la directiva la usa y la suelta 
+  ngOnDestroy(): void {
+   this.dessuscribirse.next();
+   this.dessuscribirse.complete();
 
-private actualizarVista(): void {
-  //limpiar la pared antes de hacer el diseño
-  this.viewContainer.clear();
-// lo vamos a llamar aca ahora 
-//valido permisos
-if (this.validarpermisos()) {
-  //le decimos embeba o escriba lo que esta en el templated o elemento elemento ref
-  this.viewContainer.createEmbeddedView(this.templateRef)
-}
+  }
 
-
-}
- //condicionar para mostrar segun el permiso del suuario
-private validarpermisos(): boolean {
-  let permiso: boolean = false;
-
-
-  console.log("usuario Login",this.usuario)
-
-
-  // miramos si el usuario existe y si tiene permisos el usuario // si tiene un rol puede ingrear 
-  if(this.usuario && this.usuario.rol) {
-    for(let rol of this.permisos ){
-      if(this.usuario.rol.toUpperCase() === rol) {
-        console.log("usuario",this.usuario.rol,"Permisos que se estan iterando");
-        permiso = true;
-        return permiso;
-       
+  private actualizarVista(): void {
+    // obeteniendo usuario del local storage
+    const usuarioString = localStorage.getItem('usuario');5
+    //si hay un usuario string haga un paseo es para vovler un objeto 
+    const usuario = usuarioString ? JSON.parse(usuarioString) : null;
+    
+    if (usuario && usuario.rol) {
+      const rol = usuario.rol;
+       // si encuentra el rol lo que me hace es mostrarme lo que tengo en el contenido "¨aspermiso con el rol"
+      if (this.validarPermisos(rol)) {
+        this.viewContainer.createEmbeddedView(this.templateRef);
+      } else {
+        this.viewContainer.clear();
       }
+    } else {
+      this.viewContainer.clear();
     }
   }
-return permiso;
+
+
+ //condicionar para mostrar segun el permiso del suuario
+private validarPermisos(rol:string): boolean {
+ 
+  // cuando encuentro el primero dejo de recorrer el some
+  return this.permisos.some((permiso) => permiso === rol.toUpperCase());
 }
 }
