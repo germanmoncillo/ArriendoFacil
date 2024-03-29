@@ -12,10 +12,10 @@
             <nav>
                 <ul class="links">
                     <li><a [routerLink]="ROUTER_APP.INICIO">inicio</a></li>
-                    <li><a *appPermisos="['ADMIN']" [routerLink]="ROUTER_APP.CLIENTES" >Clientes</a></li>
+                    <li><a  [routerLink]="ROUTER_APP.CLIENTES" >Clientes</a></li>
                     <li><a [routerLink]="ROUTER_APP.ACERCA_DE">About</a></li>
                     <li><a [routerLink]="ROUTER_APP.CONTACTO">Contact</a></li>
-                    <li><a [routerLink]="ROUTER_APP.USUARIOS">Usuarios</a></li>                   
+                    <li><a *appPermisos= "['ADMIN']" [routerLink]="ROUTER_APP.USUARIOS">Usuarios</a></li>                   
                 </ul>
             
             </nav>

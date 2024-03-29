@@ -1,4 +1,5 @@
 export interface UsuarioInterface {
+    _id: string,
     nombre: string;
     email:  string; 
     tipoDocumento:  string;
@@ -7,4 +8,5 @@ export interface UsuarioInterface {
     password: string;
     rol: string;
     estado:  boolean;
+    createdAt: Date,
 }

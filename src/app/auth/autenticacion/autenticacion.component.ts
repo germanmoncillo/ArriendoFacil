@@ -68,12 +68,18 @@ realizarlogin(){
 this.autenticacionService.login(data).subscribe({
   next:(resp: any) => {
     if ( resp && resp.usuario){
-      const {nombre, login, email} =  resp.usuario;
+      const {nombre,rol, login, email} =  resp.usuario;
 
       Swal.fire({
         html: `Bienvenido ${nombre}`,
       }).then(()=> {
-        this.ruta.navigateByUrl(ROUTER_APP.USUARIOS);        
+        if (rol==="ADMIN") {
+        this.ruta.navigateByUrl(ROUTER_APP.USUARIOS);  
+        
+      }
+      else { 
+        this.ruta.navigateByUrl(ROUTER_APP.INICIO);  
+      };
       });
       }
     },

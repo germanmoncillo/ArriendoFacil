@@ -22,6 +22,9 @@ export class AgrearusuariosComponent {
       password: new FormControl('',[Validators.required]),
     });
   
+      //emite eventos hacia afuera del componente de agregar clientes y envia un objeto tipo cliente cliente son las 
+//las varibaels cliente 
+  
     @Output () mostrarUsuario: EventEmitter<UsuarioInterface> = new EventEmitter<UsuarioInterface>(); //ngular que se utiliza para marcar propiedades de salida en un componente.
     @Output () cerrarform:EventEmitter<boolean> = new EventEmitter<boolean>;
   
