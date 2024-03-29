@@ -7,16 +7,20 @@ import { AutenticacionService } from '../../../services/autenticacion/autenticac
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ROUTER_APP } from '../../../core/enum/router.app';
+import { ModalComponent } from '../../../components/modal/modal.component';
 
 @Component({
   selector: 'app-verusuarios',
   standalone: true,
-  imports: [],
+  imports: [ModalComponent],
   templateUrl: './verusuarios.component.html',
   styleUrl: './verusuarios.component.css'
 })
 
 export class VerusuariosComponent implements OnInit, OnDestroy {
+recibirData($event: Event) {
+throw new Error('Method not implemented.');
+}
   usuarioSubscription: Subscription
   usuarios: UsuarioModel[] = [];
   usuarioLogin: UsuarioModel;
@@ -71,5 +75,19 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
 
   agregarUsuario() {
     this.router.navigateByUrl(ROUTER_APP.AGREGARUSUARIO);
+  }
+ 
+    // AGREGANDO MODAL
+  
+    modalAbrir:boolean= false;
+  funcionAbrir(){
+    this.modalAbrir=true;
+  }
+  funcionCerrar(){
+    this.modalAbrir=false;
+  }
+  
+  cerrarboton(evento:boolean){
+    this.modalAbrir=false;
   }
 }
