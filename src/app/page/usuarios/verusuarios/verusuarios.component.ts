@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { ROUTER_APP } from '../../../core/enum/router.app';
 import { ModalComponent } from '../../../components/modal/modal.component';
 
+
 @Component({
   selector: 'app-verusuarios',
   standalone: true,
