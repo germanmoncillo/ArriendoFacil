@@ -1,1 +1,30 @@
-<p>agrearusuarios works!</p>
+<div class="contenido">
+    <form [formGroup]="usuarioForm" (submit)="crearusuario(); cerrarF()" class="row g-3">
+        <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control" placeholder="Ingrese el Nombre del Cliente">
+  
+            <label for="direccion" class="form-label">Email</label>
+            <input type="text" formControlName="email" class="form-control" placeholder="Ingrese la Dirección del Cliente">
+  
+            <label for="telefono" class="form-label">Tipo de Documento</label>
+            <input type="text" formControlName="tipoDocumento" class="form-control" placeholder="Ingrese el Teléfono del Cliente">
+        </div>
+        
+        <div class="col-md-6">
+            <label for="email" class="form-label">Número de documento</label>
+            <input type="text" formControlName="numerodeDocumento"  class="form-control" placeholder="Ingrese el Email del Cliente">
+  
+            <label for="tipoDocumento" class="form-label">Login</label>
+            <input type="text" formControlName="Login" class="form-control" placeholder="Ingrese el Tipo de Documento">
+  
+            <label for="numerodeDocumento" class="form-label">Contraseña</label>
+            <input type="text" formControlName="password" class="form-control" placeholder="Ingrese el Número de Documento">
+        </div>
+  
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary">Crear Cliente</button>
+        </div>
+    </form>
+  </div>
+  

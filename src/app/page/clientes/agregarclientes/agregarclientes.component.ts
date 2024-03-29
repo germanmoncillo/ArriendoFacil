@@ -13,6 +13,7 @@ import { ClientesService } from '../../../services/clientes/clientes.service';
   styleUrl: './agregarclientes.component.css'
 })
 export class AgregarclientesComponent {
+  
   clienteForm = new FormGroup({
     // id: new FormControl("",Validators.required), 
     nombre: new FormControl("",Validators.required),  
