@@ -78,6 +78,8 @@ console.log('datos', this.clienteForm.value)
 
  
   }
+
+  //cerrando modal 
   cerrarF() {
   this.cerrarform.emit(false);
   }

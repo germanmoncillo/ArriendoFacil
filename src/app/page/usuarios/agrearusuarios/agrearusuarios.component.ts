@@ -42,6 +42,11 @@ export class AgrearusuariosComponent {
           numeroDocumento: UsuarioNuevo.numerodeDocumento || '',
           login: UsuarioNuevo.login || '',
           password: UsuarioNuevo.password || '',
+          _id: '',
+          rol: '',
+          estado: false,
+          // creo objeto date
+          createdAt: new Date()
         };
 
       // le decimos al suscrubisrse que me de como tal la respuesta 
