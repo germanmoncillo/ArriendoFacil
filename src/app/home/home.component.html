@@ -1,5 +1,6 @@
-<div >
-    <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-container" >
+  <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="../../assets/fondo 5.jpg" class="d-block w-100" style="max-height: 400px; object-fit: cover;" alt="Primera imagen">
@@ -40,5 +41,33 @@
             <button type="button" data-bs-target="#carouselExampleControls1" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleControls1" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-   
+</div>
+</div>
+
+<div class="vive-card">
+    <div class="card-header">
+        <h3>Encuentra el inmueble que necesitas</h3>
     </div>
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="tipoInmueble" class="form-label"><strong class="fs-4">Tipo de Inmueble:</strong></label>
+                <select class="form-select" id="tipoInmueble">
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="terreno">Terreno</option>
+                    <option value="local">Local Comercial</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ciudad" class="form-label "> 
+                    <strong class="fs-4">Ciudad:</strong></label>
+                <input type="text" class="form-control" id="ciudad" placeholder="Ingrese la ciudad">
+            </div>
+
+            
+            <button type="submit" class="btn btn-secondary">Buscar</button>
+        </form>
+    </div>
+</div>

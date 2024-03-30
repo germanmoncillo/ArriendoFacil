@@ -17,6 +17,7 @@ a:hover{
 header{
     position: relative;
     padding: 0 2rem;
+    z-index: 2;
 }
 .main-header{
     background: linear-gradient(30deg,#011224,  #021E3D, #2e5f97,#011224);
