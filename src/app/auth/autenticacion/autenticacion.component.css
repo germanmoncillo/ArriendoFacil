@@ -1,15 +1,44 @@
-/* estilos.css */
+
+
+
+/* Agrega la imagen de fondo */
+.background-image {
+    background-image: url('../../../assets/fondo 1.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    /* Otros estilos opcionales */
+  }
 
 /* Definición de colores personalizados */
 .barra-inicio-sesion {
-    background-color: #b1f1fd; /* Color de fondo naranja */
-    color: #021E3D /* Color de texto blanco */
+    background-color: #021E3D; /* Color de fondo naranja */
+    color: #021E3D; /* Color de texto blanco */
+    /* animation: border-animation 2s infinite; Duración de la animación: 2 segundos; repetir infinitamente */;
+}
+
+
+.animated-form {
+    animation: fadeInUp 1s ease forwards; /* Animación de desvanecimiento y deslizamiento hacia arriba */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(-50px); /* Desplazamiento hacia arriba */
+    box-shadow: 0 25px 50px rgba(33, 48, 210, 0.9); /* Sombreado de color CF6A8C */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Desplazamiento hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Sin desplazamiento */
+    }
 }
 
 .boton-iniciar-sesion {
-    background-color: #021E3D; /* Color de fondo */
-    border-color:  #ffffff;  
-    color: #ffffff; /* Color de texto blanco */
+    
+    background-color: #CF6A8C; /* Color de fondo */
+    border-color: #CF6A8C; /* Color del borde */
+    box-shadow: 0 0 10px #021121; /* Efecto de sombra */
 }
 
         /* Estilos personalizados */
@@ -18,10 +47,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        
         }
+       
+
+
+
+
         /* Cambia el color del texto y el fondo del botón cuando el cursor está sobre él */
 .boton-iniciar-sesion:hover {
-    background-color: #CF6A8C; /* Cambia el color de fondo del botón  Bootstrap */
-    border-color:#CF6A8C; /* Cambia el color del borde del botón  */
-    color: #ffffff; /* Cambia el color del texto del botón a blanco */
+    box-shadow: 0 0 20px #e1799b; /* Efecto de sombra más intenso al pasar el cursor */
+    color: #fff; /* Color del texto */
 }
+

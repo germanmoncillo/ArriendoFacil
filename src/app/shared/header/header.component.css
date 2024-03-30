@@ -19,7 +19,7 @@ header{
     padding: 0 2rem;
 }
 .main-header{
-    background: linear-gradient(30deg,#011224, #1b3450, #021E3D, #1b3450,#b1f1fd);
+    background: linear-gradient(30deg,#011224,  #021E3D, #2e5f97,#011224);
   background-size: 400% 400%;
   position: relative;
   /*background-color: #fff;*/
@@ -30,11 +30,15 @@ header{
   align-items: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 18px;
-  animation: cambiar 10s ease infinite;
+  animation: cambiar 15s ease infinite;
 
 }
 
-
+@keyframes cambiar{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
 
 .main_nav ul li a {
     gap: 2rem;
