@@ -9,3 +9,16 @@
 .carousel-indicators .active {
     background-color: #CF6A8C; /* Color de fondo de la barrita activa */
 }
+.carousel-caption {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior según sea necesario */
+    left: 30%;
+    transform: translateX(-50%);
+    color: white; /* Color del texto */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+}
