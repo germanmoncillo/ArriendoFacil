@@ -1,0 +1,9 @@
+/* Cambiar el color de fondo de las barritas inactivas */
+.carousel-indicators li {
+    background-color: #050505; /* Color de fondo de las barritas inactivas */
+}
+
+/* Cambiar el color de fondo de la barrita activa */
+.carousel-indicators .active {
+    background-color: #CF6A8C; /* Color de fondo de la barrita activa */
+}

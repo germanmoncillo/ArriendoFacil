@@ -34,6 +34,56 @@ header{
 
 }
 
+
+
+.main_nav ul li a {
+    gap: 2rem;
+    color: white;
+    display: block;
+    line-height: 1.4;
+    text-decoration: none;
+    position: relative; /* Añade posición relativa para posicionar los pseudo-elementos */
+    font-size: 25px; /* Ajusta el tamaño del texto */
+
+}
+.main_nav ul li a:hover {
+    color: #CF6A8C; /* Cambia el color del texto al pasar el cursor */
+}
+.main_nav ul li a:before,
+.main_nav ul li a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #CF6A8C;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main_nav ul li a:before {
+    top: 0;
+    transform: scaleX(0); /* Inicialmente, el subrayado superior no tiene ancho */
+    transform-origin: right; /* Inicia la transformación desde la derecha */
+}
+
+.main_nav ul li a:after {
+    bottom: 0;
+    transform: scaleX(0); /* Inicialmente, el subrayado inferior no tiene ancho */
+    transform-origin: left; /* Inicia la transformación desde la izquierda */
+}
+
+.main_nav ul li a:hover:before {
+    transform: scaleX(1); /* Al pasar el cursor, expandir el subrayado superior */
+}
+
+.main_nav ul li a:hover:after {
+    transform: scaleX(1); /* Al pasar el cursor, expandir el subrayado inferior */
+}
+
+
+
+
+
 .navbar{
     width: 100%;
     height: 60px;
@@ -43,8 +93,6 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-
-
 
 .navbar .logo a .logo,
 .navbar .logo a .logo-text {
@@ -65,11 +113,20 @@ header{
 .navbar .links{
     display: flex;
     gap:2rem;
-}
-.navbar .toggle_btn{
-    color :#000000;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
+
 }
 
+
+/* Estilos para botones dentro de boton-inicio y boton-cerrar */
+.boton-inicio button.btn.btn-secondary,
+.boton-cerrar button.btn.btn-secondary {
+    background-color: #CF6A8C; /* Color de fondo */
+    border-color: #CF6A8C; /* Color del borde */
+    color: #fff; /* Color del texto */
+    box-shadow: 0 0 10px #021121; /* Efecto de sombra */
+}
+
+.boton-inicio button.btn.btn-secondary:hover,
+.boton-cerrar button.btn.btn-secondary:hover {
+    box-shadow: 0 0 20px #e1799b; /* Efecto de sombra más intenso al pasar el cursor */
+}

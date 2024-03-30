@@ -8,9 +8,9 @@
     </a>
 </div>
     
-            <nav>
+            <nav class="main_nav">
                 <ul class="links">
-                    <li><a [routerLink]="ROUTER_APP.INICIO">inicio</a></li>
+                    <li><a [routerLink]="ROUTER_APP.INICIO">Inicio</a></li>
                     <li><a  [routerLink]="ROUTER_APP.CLIENTES" >Clientes</a></li>
                     <li><a [routerLink]="ROUTER_APP.ACERCA_DE">About</a></li>
                     <li><a [routerLink]="ROUTER_APP.CONTACTO">Contact</a></li>
@@ -19,18 +19,13 @@
             
             </nav>
       
-            <!-- <a routerLink="registro">
-                <button type="button" class="btn btn-secondary"> Sign-Up</button>
-            </a> -->
-          
-            <a *appPermisos="['ARRENDATARIO','ADMIN']" class="action_btn">
-                <li (click)="cerrarSesion()" 
-                class="btn btn-primary">Cerrar Sesión</li>
+            <a *appPermisos="[]" [routerLink]="ROUTER_APP.AUTENTICACION" class="boton-inicio">
+                <button type="button" class="btn btn-secondary">Iniciar Sesión</button>
             </a>
-           
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div> 
-              
+
+            <a *appPermisos="['ARRENDATARIO','ADMIN']" class="boton-cerrar"(click)="cerrarSesion()">
+            <button  type="button" class="btn btn-secondary" >Cerrar Sesión</button>
+            </a>
+
     </div>    
 </header>
