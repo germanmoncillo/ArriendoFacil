@@ -8,22 +8,20 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ROUTER_APP } from '../../../core/enum/router.app';
 import { ModalComponent } from '../../../components/modal/modal.component';
+import { AgrearusuariosComponent } from '../agrearusuarios/agrearusuarios.component';
+import { UsuarioInterface } from '../../../core/interfaces/usuario';
 
 
 @Component({
   selector: 'app-verusuarios',
   standalone: true,
-  imports: [ModalComponent],
+  imports: [AgrearusuariosComponent,ModalComponent],
   templateUrl: './verusuarios.component.html',
   styleUrl: './verusuarios.component.css'
 })
 
 export class VerusuariosComponent implements OnInit, OnDestroy {
 
-
-  recibirData($event: Event) {
-throw new Error('Method not implemented.');
-}
   usuarioSubscription: Subscription
   usuarios: UsuarioModel[] = [];
   usuarioLogin: UsuarioModel;
@@ -45,6 +43,12 @@ throw new Error('Method not implemented.');
   
   }
   
+  
+  recibirData(nuevoUsuario: UsuarioInterface) {
+    this.usuarios.push(nuevoUsuario);
+    
+    }
+
   cargarUsuarios() {
     this.usuarioSubscription = this.usuarioService.getUsuarios().subscribe((resp: any) => {
       this.usuarios = resp.usuarios;
@@ -76,9 +80,9 @@ throw new Error('Method not implemented.');
     });
   }
 
-  agregarUsuario() {
-    this.router.navigateByUrl(ROUTER_APP.AGREGARUSUARIO);
-  }
+  // agregarUsuario() {
+  //   this.router.navigateByUrl(ROUTER_APP.AGREGARUSUARIO);
+  // }
  
     // AGREGANDO MODAL
   

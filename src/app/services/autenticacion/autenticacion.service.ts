@@ -28,14 +28,16 @@ export class AutenticacionService {
   get token(): string {
     return localStorage.getItem('token') || '';
   }
-  // el get es que me permite suscribirme al evento 
+  // el get es que me permite suscribirme al evento devuelve el Subject<void>
   get onLogin () : Subject<void> {
     return this.loginEvent;
   }
   get onLogout () : Subject<void> {
     return this.logoutEvent;
   } 
-
+// Este método envía una solicitud GET al servidor para validar el token de acceso actual. 
+//Si el token es válido, 
+//se almacenan los detalles del usuario en el localStorage y se emite un evento de inicio de sesión
   validateToken(): Observable <boolean>{
     return this.httpClient.get(`${base_url}/auth`,{
       headers:{
@@ -73,9 +75,10 @@ export class AutenticacionService {
         this.usuario.numeroDocumento = '';
         this.usuario.email = '';
         localStorage.setItem('token', resp.token);
-        // en el localstorage no puedo almacenar objetos por eso no es res.usuario
+        // en el localstorage no puedo almacenar objetos por eso no es res.usuario si no con
+        //el json
         localStorage.setItem('usuario',JSON.stringify(this.usuario));
-        console.log("qui",resp)
+        console.log("res",resp)
         return true;
       }),
       catchError((error)=>{
@@ -84,7 +87,8 @@ export class AutenticacionService {
       })
       );
   }
-
+  //Este método envía una solicitud POST al servidor para iniciar sesión con las credenciales proporcionadas. 
+  //Si la autenticación es exitosa, se almacena el token de acceso y se llama al método validateToken()
   login(login: LoginInterface) {
     return this.httpClient.post(`${base_url}/auth`, login).pipe(
       tap((resp: any) => {

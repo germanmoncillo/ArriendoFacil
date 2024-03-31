@@ -1,48 +1,116 @@
-.parallax1 {
-    background-image: url('../../assets/fondo1.jpg'); /* Replace 'background.jpg' with your image */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+
+
+/* Cambiar el color de fondo de las barritas inactivas */
+.carousel-indicators li {
+    background-color: #050505; /* Color de fondo de las barritas inactivas */
+   
+}
+
+/* Cambiar el color de fondo de la barrita activa */
+.carousel-indicators .active {
+    background-color: #CF6A8C; /* Color de fondo de la barrita activa */
+   
+}
+.carousel-caption {
+   
+    left: 30%;
+    transform: translateX(-70%);
+    color: white; /* Color del texto */
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    padding: 15px 40px;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    bottom: 200px;
+    width: 500px; /* ancho recuadro*/
+  
+}
+
+
+
+.vive-card {
+    position: relative;
+    top: -70px; /* Ajusta la posición vertical según sea necesario */
+    left: 100px; /* Ajusta la posición horizontal según sea necesario */
+    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+    border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
+    padding: 20px; /* Ajusta el espacio interior según sea necesario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
+    margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+  
+}
+
+.card-header {
+    background-color: rgba(4, 40, 79, 0.7); /* Color de fondo del encabezado de la tarjeta con transparencia */
+    color: white; /* Texto blanco para contraste */
+    padding: 10px; /* Ajuste de espacio interior */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    text-align: center; /* Centra el texto horizontalmente */
+  font-weight: bold; /* Aplica negrita al texto */
+  font-family: Arial, sans-serif; /* Establece la fuente Arial */
+  }
+
+  .card-body {
+    padding: 20px; /* Ajuste de espacio interior */
+  }
+
+  .carousel-indicators {
+    bottom: 50px; /* ajuste de parte superior */
+
+}
+.btn-secondary {
+    background-color: #CF6A8C; /* Color de fondo */
+    border-color: #CF6A8C; /* Color del borde */
+    color: #fff; /* Color del texto */
+    box-shadow: 0 0 10px #021121; /* Efecto de sombra */
+}
+
+.btn-secondary:hover {
+    background-color: #FF80AB; /* Color de fondo del botón al pasar el cursor */
+    box-shadow: 0px 3px 10px #021121; /* Sombra oscura al pasar el cursor */
+}
+
+
+.outer-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -30px; /* Ajusta la posición vertical según sea necesario */
+    left: 100px; /* Ajusta la posición horizontal según sea necesario */
+    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+    border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
+    padding: 20px; /* Ajusta el espacio interior según sea necesario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
+    margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
   }
   
-  .parallax-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+  .inner-cards-container {
+    display: flex;
   }
- 
+  
+  .inner-card {
+    flex: 1;
+    margin: 10px;
+    max-width: calc(100% / 3 - 20px); /* Distribuye el espacio equitativamente */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .inner-card img {
+    width: 100%;
+    height: 400px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .inner-card-content {
+    padding: 10px;
+    
+  }
 
-.parallax2 {
-    background-image: url('../../assets/fondo2.jpg'); /* Replace 'background.jpg' with your image */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-}
-.parallax3 {
-    background-image: url('../../assets/fondo3.jpg'); /* Replace 'background.jpg' with your image */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-}
-.content {
-    padding: 50px;
-    background-color: #f2f2f2;
-    text-align: center;
-  }

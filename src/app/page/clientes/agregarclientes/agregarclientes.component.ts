@@ -25,13 +25,18 @@ export class AgregarclientesComponent {
     // estado: new FormControl(true,Validators.required), 
   });
 
+
+  //emite eventos hacia afuera del componente de agregar clientes y envia un objeto tipo cliente cliente son las 
+//las varibaels cliente 
   @Output () mostrarClientes: EventEmitter<Cliente> = new EventEmitter<Cliente>(); //ngular que se utiliza para marcar propiedades de salida en un componente.
 @Output () cerrarform:EventEmitter<boolean> = new EventEmitter<boolean>;
 
 // constructor creacion
 constructor(private clienteService: ClientesService){}
 
-
+// Este método se invoca cuando se envía el formulario para crear un nuevo cliente. 
+// Se verifica si el formulario es válido y luego se obtienen los valores del formulario
+//  para crear un nuevo objeto ClienteModel. Luego se utiliza el servicio ClientesService para enviar los datos al servidor.
 crearcliente (){
 
   // ahora cogo mi formulario y lo mando a una constante
@@ -73,6 +78,8 @@ console.log('datos', this.clienteForm.value)
 
  
   }
+
+  //cerrando modal 
   cerrarF() {
   this.cerrarform.emit(false);
   }
