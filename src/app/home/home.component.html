@@ -47,32 +47,24 @@
       </div>
     </div>
 
-      <div class="vive-card">
-          <div class="card-header">
-              <h3>Encuentra el inmueble que necesitas</h3>
-          </div>
-          <div class="card-body">
-              <form>
-                  <div class="mb-3">
-                      <label for="tipoInmueble" class="form-label"><strong class="fs-4">Tipo de Inmueble:</strong></label>
-                      <select class="form-select" id="tipoInmueble">
-                          <option value="casa">Casa</option>
-                          <option value="apartamento">Apartamento</option>
-                          <option value="terreno">Terreno</option>
-                          <option value="local">Local Comercial</option>
-                          <!-- Agrega más opciones según sea necesario -->
-                      </select>
-                  </div>
-       
-      
-                  
-                  <button type="button" class="btn btn-secondary">Buscar</button>
-
-              </form>
-            </div>
+  <div class="vive-card">
+    <div class="card-header">
+      <h3>Encuentra el inmueble que necesitas</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="tipoInmueble" class="form-label"><strong class="fs-4">Tipo de Inmueble:</strong></label>
+          <select class="form-select" (change)="onTipoInmuebleChange($event)">
+            <option value="" selected disabled>Seleccione un tipo de inmueble</option>
+            <option value="casa">Casa</option>
+            <option value="apartamento">Apartamento</option>
+            <option value="locales">Locales</option>
+          </select>
         </div>
-
-
+      </form>
+    </div>
+  </div>
 
 
    <!-- Tarjetas -->
@@ -80,7 +72,8 @@
    <div class="outer-card">
     <h2>Sugerencias</h2>
     <div class="inner-cards-container">
-@if(apartamento)   {   
+
+@if(mostrarApartamentos){   
       <!-- Tarjeta 1 -->
       <div class="inner-card">
         <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
@@ -155,10 +148,10 @@
           <p>Contenido de la tarjeta 3.</p>
         </div>
       </div>
-    }
+}
 
 
-      @if(casa){
+@if(mostrarCasas){
       <!-- ---tarjeta 4 -->
 
 
@@ -183,8 +176,8 @@
           </button>
         </div>
         <div class="inner-card-content">
-          <h3>Título de la Tarjeta 3</h3>
-          <p>Contenido de la tarjeta 3.</p>
+          <h3>Título de la Tarjeta 4</h3>
+          <p>Contenido de la tarjeta 4.</p>
         </div>
       </div>
 
@@ -211,8 +204,8 @@
           </button>
         </div>
         <div class="inner-card-content">
-          <h3>Título de la Tarjeta 3</h3>
-          <p>Contenido de la tarjeta 3.</p>
+          <h3>Título de la Tarjeta 5</h3>
+          <p>Contenido de la tarjeta 5.</p>
         </div>
       </div>
  <!-- tarjeta 6  -->
@@ -238,16 +231,104 @@
       </button>
     </div>
     <div class="inner-card-content">
-      <h3>Título de la Tarjeta 3</h3>
-      <p>Contenido de la tarjeta 3.</p>
+      <h3>Título de la Tarjeta 6</h3>
+      <p>Contenido de la tarjeta 6.</p>
     </div>
   </div>
 }
 
-      
+     
+@if(mostrarLocal){
+    <!-- ---tarjeta 4 -->
+
+
+    <div class="inner-card">
+      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../../assets/imag3.jpg" class="d-block" alt="Imagen 3">
+          </div>
+          <div class="carousel-item active">
+              <img src="../../assets/imag1.jpg" class="d-block" alt="Imagen 3">
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="inner-card-content">
+        <h3>Título de la Tarjeta 7</h3>
+        <p>Contenido de la tarjeta 4.</p>
+      </div>
+    </div>
+
+  <!-- tarjeta 5 -->
+
+  <div class="inner-card">
+      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../../assets/imag3.jpg" class="d-block" alt="Imagen 3">
+          </div>
+          <div class="carousel-item active">
+              <img src="../../assets/imag1.jpg" class="d-block" alt="Imagen 3">
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="inner-card-content">
+        <h3>Título de la Tarjeta 8</h3>
+        <p>Contenido de la tarjeta 5.</p>
+      </div>
+    </div>
+<!-- tarjeta 6  -->
+
+<div class="inner-card ">
+  <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../assets/imag3.jpg" class="d-block" alt="Imagen 3">
+      </div>
+      <div class="carousel-item active">
+          <img src="../../assets/imag1.jpg" class="d-block" alt="Imagen 3">
+        </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="inner-card-content">
+    <h3>Título de la Tarjeta 9</h3>
+    <p>Contenido de la tarjeta 6.</p>
+  </div>
+</div>
+}
+
+
+
+
     </div>
   </div>
   
 
 </div>
-
