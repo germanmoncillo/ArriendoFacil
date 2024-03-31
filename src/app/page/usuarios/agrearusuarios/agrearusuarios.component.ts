@@ -3,11 +3,13 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { UsuarioModel } from '../../../core/models/usuario.model';
 import { UsuarioInterface } from '../../../core/interfaces/usuario';
+import { AgregarclientesComponent } from '../../clientes/agregarclientes/agregarclientes.component';
+import { ModalComponent } from '../../../components/modal/modal.component';
 
 @Component({
   selector: 'app-agrearusuarios',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, AgregarclientesComponent, ModalComponent],
   templateUrl: './agrearusuarios.component.html',
   styleUrl: './agrearusuarios.component.css'
 })

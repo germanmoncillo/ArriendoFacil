@@ -19,7 +19,9 @@ import { ModalComponent } from '../../../components/modal/modal.component';
 })
 
 export class VerusuariosComponent implements OnInit, OnDestroy {
-recibirData($event: Event) {
+
+
+  recibirData($event: Event) {
 throw new Error('Method not implemented.');
 }
   usuarioSubscription: Subscription

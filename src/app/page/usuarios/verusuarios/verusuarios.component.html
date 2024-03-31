@@ -69,14 +69,9 @@
 
   <div>
     <div class="col-md-auto" style="text-align: right;">  
-<<<<<<< HEAD
-      <button class="btn btn-primary"  (click)="funcionAbrir()" >Agregar</button>
-=======
-      <button  class="btn btn-primary">Agregar</button>
->>>>>>> 97f239fef51c36602439dd235f00b3b8e3d6332c
     </div>
       <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
-        <!-- <app-agregarusuarios (cerrarform)="cerrarboton($event)" (mostrarUsuario)="recibirData($event)">
-        </app-agregarusuarios> -->
+        <app-agregarusuarios (cerrarform)="cerrarboton($event)" (mostrarUsuario)="recibirData($event)">
+        </app-agregarusuarios>
     </app-modal>
   </div>
