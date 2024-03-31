@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,12 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+
+
 export class HomeComponent {
 
+  casa:boolean=false;
+  apartamento:boolean=true;
 }
 
 
