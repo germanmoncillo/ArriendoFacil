@@ -12,7 +12,7 @@
    
 }
 .carousel-caption {
-    position: absolute;
+   
     left: 30%;
     transform: translateX(-70%);
     color: white; /* Color del texto */
@@ -24,28 +24,23 @@
     font-weight: bold; /* Negrita */
     bottom: 200px;
     width: 500px; /* ancho recuadro*/
-}
-
-.container {
-    position: relative;
-}
-.carousel-container {
-    margin-bottom: 400px; /* Ajusta el margen inferior para dejar espacio para el footer */
   
-
 }
+
+
 
 .vive-card {
-    position: absolute;
-    top: 450px; /* Ajusta la posición vertical según sea necesario */
+    position: relative;
+    top: -70px; /* Ajusta la posición vertical según sea necesario */
     left: 20px; /* Ajusta la posición horizontal según sea necesario */
-    width: calc(100% - 40px); /* Ajusta el ancho restando el espacio de los márgenes */
+    width: calc(100% - 50px); /* Ajusta el ancho restando el espacio de los márgenes */
     background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
     border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
     padding: 20px; /* Ajusta el espacio interior según sea necesario */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
     margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+  
 }
 
 .card-header {
@@ -63,7 +58,7 @@
   }
 
   .carousel-indicators {
-    bottom: 50px; /* Ajusta la distancia desde la parte inferior según sea necesario */
+    bottom: 50px; /* ajuste de parte superior */
 
 }
 .btn-secondary {
@@ -77,3 +72,6 @@
     background-color: #FF80AB; /* Color de fondo del botón al pasar el cursor */
     box-shadow: 0px 3px 10px #021121; /* Sombra oscura al pasar el cursor */
 }
+
+
+
