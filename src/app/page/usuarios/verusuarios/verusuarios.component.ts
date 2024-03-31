@@ -6,7 +6,6 @@ import { config } from '../../../../environments/configuration/config';
 import { AutenticacionService } from '../../../services/autenticacion/autenticacion.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { ROUTER_APP } from '../../../core/enum/router.app';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { AgrearusuariosComponent } from '../agrearusuarios/agrearusuarios.component';
 import { UsuarioInterface } from '../../../core/interfaces/usuario';
@@ -40,13 +39,10 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.usuarioSubscription?.unsubscribe();
-  
   }
-  
   
   recibirData(nuevoUsuario: UsuarioInterface) {
     this.usuarios.push(nuevoUsuario);
-    
     }
 
   cargarUsuarios() {
@@ -79,22 +75,20 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
       );
     });
   }
-
-  // agregarUsuario() {
-  //   this.router.navigateByUrl(ROUTER_APP.AGREGARUSUARIO);
-  // }
  
     // AGREGANDO MODAL
   
-    modalAbrir:boolean= false;
-  funcionAbrir(){
-    this.modalAbrir=true;
-  }
-  funcionCerrar(){
-    this.modalAbrir=false;
-  }
+  modalAbrir:boolean= false;
+
+    funcionAbrir(){
+      this.modalAbrir=true;
+    }
+
+    funcionCerrar(){
+      this.modalAbrir=false;
+    }
   
-  cerrarboton(evento:boolean){
-    this.modalAbrir=false;
-  }
+    cerrarboton(evento:boolean){
+      this.modalAbrir=false;
+    }
 }

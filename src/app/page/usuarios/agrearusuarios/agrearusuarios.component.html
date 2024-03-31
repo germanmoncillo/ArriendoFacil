@@ -1,25 +1,49 @@
 <div class="contenido">
-    <form [formGroup]="usuarioForm" (submit)="crearusuario(); cerrarF()" class="row g-3">
+    <form [formGroup]="usuarioForm" (submit)="crearUsuario(); cerrarF()" class="row g-3">
         <div class="col-md-6">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" formControlName="nombre" class="form-control" placeholder="Ingrese el Nombre del Cliente">
+            <input 
+                type="text" 
+                formControlName="nombre" 
+                class="form-control" 
+                placeholder="Ingrese el Nombre del Cliente">
   
             <label for="direccion" class="form-label">Email</label>
-            <input type="text" formControlName="email" class="form-control" placeholder="Ingrese la Dirección del Cliente">
+            <input 
+                type="email" 
+                formControlName="email" 
+                class="form-control" 
+                placeholder="Ingrese el email">
   
-            <label for="telefono" class="form-label">Tipo de Documento</label>
-            <input type="text" formControlName="tipoDocumento" class="form-control" placeholder="Ingrese el Teléfono del Cliente">
+            <label for="TipoDocumento" class="form-label">Tipo de Documento</label>
+            <input 
+                type="text" 
+                formControlName="tipoDocumento" 
+                class="form-control" 
+                placeholder="Ingrese el tipo de documento">
         </div>
         
         <div class="col-md-6">
-            <label for="email" class="form-label">Número de documento</label>
-            <input type="text" formControlName="numerodeDocumento"  class="form-control" placeholder="Ingrese el Email del Cliente">
+            <label for="numeroDocumento" class="form-label">Número de documento</label>
+            <input 
+                type="text" 
+                formControlName="numerodeDocumento"  
+                class="form-control" 
+                placeholder="Ingrese el número de documento">
   
-            <label for="tipoDocumento" class="form-label">Login</label>
-            <input type="text" formControlName="Login" class="form-control" placeholder="Ingrese el Tipo de Documento">
+            <label for="login" class="form-label">Nombre de usuario</label>
+            <input 
+                type="email" 
+                formControlName="Login" 
+                class="form-control" 
+                placeholder="Ingrese email del usuario">
   
-            <label for="numerodeDocumento" class="form-label">Contraseña</label>
-            <input type="text" formControlName="password" class="form-control" placeholder="Ingrese el Número de Documento">
+            <label for="password" class="form-label">Contraseña</label>
+            <input 
+                type="text" 
+                formControlName="password" 
+                class="form-control" 
+                placeholder="Ingrese la contraseña">
         </div>
   
         <div class="col-12 mt-3">

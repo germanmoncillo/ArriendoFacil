@@ -12,6 +12,7 @@ import { ClientesService } from '../../../services/clientes/clientes.service';
   templateUrl: './agregarclientes.component.html',
   styleUrl: './agregarclientes.component.css'
 })
+
 export class AgregarclientesComponent {
   
   clienteForm = new FormGroup({
