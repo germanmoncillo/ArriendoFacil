@@ -105,10 +105,12 @@
   
   .inner-card img {
     width: 100%;
-    height: auto;
+    height: 400px;
     border-bottom: 1px solid #ccc;
   }
   
   .inner-card-content {
     padding: 10px;
+    
   }
+
