@@ -32,8 +32,8 @@
 .vive-card {
     position: relative;
     top: -70px; /* Ajusta la posición vertical según sea necesario */
-    left: 20px; /* Ajusta la posición horizontal según sea necesario */
-    width: calc(100% - 50px); /* Ajusta el ancho restando el espacio de los márgenes */
+    left: 100px; /* Ajusta la posición horizontal según sea necesario */
+    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
     background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
     border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
     padding: 20px; /* Ajusta el espacio interior según sea necesario */
@@ -74,4 +74,41 @@
 }
 
 
-
+.outer-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -30px; /* Ajusta la posición vertical según sea necesario */
+    left: 100px; /* Ajusta la posición horizontal según sea necesario */
+    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+    border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
+    padding: 20px; /* Ajusta el espacio interior según sea necesario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
+    margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+  }
+  
+  .inner-cards-container {
+    display: flex;
+  }
+  
+  .inner-card {
+    flex: 1;
+    margin: 10px;
+    max-width: calc(100% / 3 - 20px); /* Distribuye el espacio equitativamente */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .inner-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .inner-card-content {
+    padding: 10px;
+  }
