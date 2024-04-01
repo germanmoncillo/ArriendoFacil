@@ -12,7 +12,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 })
 
 export class HomeComponent implements OnInit {
-  mostrarApartamentos: boolean = true;
+  mostrarApartamentos: boolean = false;
   mostrarCasas: boolean = false;
   mostrarLocal: boolean = false;
   tipoInmueble: string = '';
