@@ -22,7 +22,7 @@ export class AgregarclientesComponent {
     email: new  FormControl('',[Validators.email,Validators.required]),
     direccion: new FormControl('',Validators.required),
     tipoDocumento: new  FormControl('',[Validators.required]),                     /*   formulario tiene un grupo de controles  cada input es un control*/
-    numerodeDocumento: new FormControl('',[Validators.required]),
+    numeroDocumento: new FormControl('',[Validators.required]),
     // estado: new FormControl(true,Validators.required), 
   });
 
@@ -56,7 +56,7 @@ const data: CLienteModel = {
   telefono: Number(clienteNuevo.telefono),
   email: clienteNuevo.email || '',
   tipoDocumento: clienteNuevo.tipoDocumento || '',
-  numeroDocumento: clienteNuevo.numerodeDocumento || '',
+  numeroDocumento: clienteNuevo.numeroDocumento || '',
   direccion: clienteNuevo.direccion || '',
  
 };

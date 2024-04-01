@@ -1,16 +1,15 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AcercaDeComponent } from './page/acerca-de/acerca-de.component';
-import { AlcanceComponent } from './page/alcance/alcance.component';
 import { ContactoComponent } from './page/contacto/contacto.component';
 import { QuienesSomosComponent } from './page/quienes-somos/quienes-somos.component';
-import { RegistroComponent } from './page/registro/registro.component';
 import { VerclientesComponent } from './page/clientes/verclientes/verclientes.component';
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
 import { AgrearusuariosComponent } from './page/usuarios/agrearusuarios/agrearusuarios.component';
 import { VerusuariosComponent } from './page/usuarios/verusuarios/verusuarios.component';
 import { authGuard } from './guards/auth/auth.guard';
 import { UsuarioModel } from './core/models/usuario.model';
+import { MiarriendoComponent } from './page/miarriendo/miarriendo.component';
+import { PqrsComponent } from './page/pqrs/pqrs.component';
 
 
 export const routes: Routes = [
@@ -20,7 +19,13 @@ export const routes: Routes = [
         path:'inicio', 
         title: 'Inicio',   
         component: HomeComponent
-   },
+    },
+
+    {
+        path: 'contacto',
+        title: 'Contactenos',
+        component: ContactoComponent,
+    },
     
     
     {
@@ -39,42 +44,30 @@ export const routes: Routes = [
         children: [
   
     {
-        path: 'acercade',
-        title: 'Quienes somos',
-        component: AcercaDeComponent,
-    },
-    {
-        path: 'alcance',
-        title: 'Alcance del Proyecto',
-        component: AlcanceComponent,
-    },
-    {
         path: 'contacto',
         title: 'Contactenos',
         component: ContactoComponent,
     },
     {
-        path: 'quienessomos',
-        title: 'Quienes Somos',
-        component: QuienesSomosComponent,
-    },
-    {
-        path: 'registro',
-        title: 'Registro',
-        component: RegistroComponent,
-    },
-    {
-        path: 'cliente',  // cyal es el path
-        title: 'clientes potenciales',// el nombre de la pagina
+        path: 'inmuebles',  // cyal es el path
+        title: 'Mis inmuebles',// el nombre de la pagina
         component: VerclientesComponent,   //componente como tal
     },
-
     {
         path: 'usuarios',  // cual es el path
-    title: 'usuarios',// el nombre de la pagina
-    component: VerusuariosComponent,   //componente como tal
-
-    }
+        title: 'usuarios',// el nombre de la pagina
+        component: VerusuariosComponent,   //componente como tal
+    },
+    {
+        path: 'miarriendo',
+        title: 'Mi arriendo',
+        component: MiarriendoComponent,
+    },
+    {
+        path: 'pqrs',
+        title: 'pqrs',
+        component: PqrsComponent,
+    },
     // {
     //     path: 'login',  // cyal es el path o ruta
     //     title: 'Autenticacion',// el nombre de la pagina

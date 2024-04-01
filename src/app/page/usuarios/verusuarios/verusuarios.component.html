@@ -17,11 +17,11 @@
           <th scope="row">id</th>
           <td colspan="2" class="table-active">Nombre</td>
           <td colspan="3" class="table-active">Email</td>
-          <td colspan="4" class="table-active">TipoDocumento</td>
-          <td colspan="5" class="table-active">NumerodeDocumento</td>
+          <td colspan="4" class="table-active">Tipo de documento</td>
+          <td colspan="5" class="table-active">Número de documento</td>
           <td colspan="6" class="table-active">Rol</td>
           <td colspan="7" class="table-active">Estado</td>
-          <td colspan="8" class="table-active text-center">Acciones </td>
+          <td colspan="8" class="table-active text-center">Acciones</td>
         </tr>
         @for (usuario of usuarios; track $index) {
       <tr>
@@ -33,13 +33,13 @@
           <td colspan="7" class="table-active"> 
             <select  
             class="form-control"
+            [(ngModel)]="usuario.rol" 
             (change)="actualizarRol(usuario)"
             > 
             @for (rol of roles; track $index) { 
               <option [value]="rol">{{ rol }}</option>
             }
             </select>
-            {{usuario.rol}}
           </td>
           <td colspan="8" class="table-active">{{usuario.estado}}</td>
           <td colspan="9" class="table-active text-center"> 

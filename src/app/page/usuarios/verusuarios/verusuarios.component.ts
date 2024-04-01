@@ -9,12 +9,13 @@ import Swal from 'sweetalert2';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { AgrearusuariosComponent } from '../agrearusuarios/agrearusuarios.component';
 import { UsuarioInterface } from '../../../core/interfaces/usuario';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-verusuarios',
   standalone: true,
-  imports: [AgrearusuariosComponent,ModalComponent],
+  imports: [AgrearusuariosComponent,ModalComponent, FormsModule],
   templateUrl: './verusuarios.component.html',
   styleUrl: './verusuarios.component.css'
 })
