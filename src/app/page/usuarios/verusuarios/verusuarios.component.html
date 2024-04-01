@@ -69,12 +69,12 @@
 
   <div>
     <div class="col-md-auto" style="text-align: right;">  
-
-      <button class="btn btn-primary" (click)="funcionAbrir()" >Agregar</button>
-
+      <button class="btn btn-primary"  (click)="funcionAbrir()" >Agregar</button>
     </div>
       <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
-         <app-agrearusuarios (cerrarform)="cerrarboton($event)" (mostrarUsuario)="recibirData($event)">
-        </app-agrearusuarios> 
+
+        <app-agrearusuarios (cerrarform)="cerrarboton($event)" (mostrarUsuario)="recibirData($event)" >
+        </app-agrearusuarios>
+        
     </app-modal>
   </div>
