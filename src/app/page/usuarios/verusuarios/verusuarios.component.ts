@@ -26,7 +26,11 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
   usuarios: UsuarioModel[] = [];
   usuarioLogin: UsuarioModel;
   roles = config.roles; 
-  
+  searchTerm: string = '';
+  filteredData: any[] = [];
+
+// este va en el html
+  usuarioEliminar: string = '';
   constructor (  
     private usuarioService: UsuariosService,
     private autenticacionService: AutenticacionService,
@@ -49,6 +53,7 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
   cargarUsuarios() {
     this.usuarioSubscription = this.usuarioService.getUsuarios().subscribe((resp: any) => {
       this.usuarios = resp.usuarios;
+      this.filteredData = this.usuarios;
     });
   }
 
@@ -63,6 +68,7 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
           `Se eliminé el usuario ${resp.usuario.nombre}`,
           'success'
         );
+        this.funcionCerrar2();
       });
     }
   }
@@ -80,16 +86,58 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
     // AGREGANDO MODAL
   
   modalAbrir:boolean= false;
+  modalAbrir2:boolean= false;
 
     funcionAbrir(){
       this.modalAbrir=true;
+    }
+    funcionAbrir2(user:string){
+      this.modalAbrir2=true;
+      this.usuarioEliminar=user;
     }
 
     funcionCerrar(){
       this.modalAbrir=false;
     }
+    funcionCerrar2(){
+      this.modalAbrir2=false;
+    }
   
     cerrarboton(evento:boolean){
       this.modalAbrir=false;
     }
+  
+    // si es verdadera me mostrara la informacion filtrada 
+    filterData(): void {
+      //verifico lo que esta escrito si no hay nada 
+      // en searchTerm trim quita espacio 
+      if (!this.searchTerm.trim()) {
+        this.filteredData = [...this.usuarios];
+        return;
+      }
+  
+      //Convertimos el termino a buscar en minusculas para luego hacer el filtro.
+      // filter data hace filtro en un objeto 
+      // busca la llave del objeto que es un key es el identificador de la tabla 
+      // la fila hace referencia el key ojo
+      // hace filtra llama y almacena el valor en el item (en el objeto)
+      // si el valor es igual al string 
+      // imte es especificador de toda la linea 
+      const searchTermLower = this.searchTerm.trim().toLowerCase();
+      this.filteredData = this.usuarios.filter((item: any) => {
+        for (const key in item) {
+          if (Object.prototype.hasOwnProperty.call(item, key)) {
+            const value = item[key];
+            if (
+              typeof value === 'string' &&
+              value.toLowerCase().includes(searchTermLower)
+            ) {
+              return true;
+            }
+          }
+        }
+        return false;
+      });
+    }
+
 }

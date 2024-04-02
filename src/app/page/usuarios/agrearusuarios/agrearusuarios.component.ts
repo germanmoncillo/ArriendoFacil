@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, afterNextRender } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
-import { UsuarioModel } from '../../../core/models/usuario.model';
 import { UsuarioInterface } from '../../../core/interfaces/usuario';
 import { AgregarclientesComponent } from '../../clientes/agregarclientes/agregarclientes.component';
 import { ModalComponent } from '../../../components/modal/modal.component';
@@ -18,14 +17,7 @@ import Swal from 'sweetalert2';
 
 export class AgrearusuariosComponent implements OnInit {
 
-    // usuarioForm = new FormGroup({
-    //   nombre: new FormControl("",Validators.required),  
-    //   email: new  FormControl('',[Validators.email,Validators.required]),
-    //   tipoDocumento: new  FormControl('',[Validators.required]),                    
-    //   numerodeDocumento: new FormControl('',[Validators.required]),
-    //   login: new FormControl('',[Validators.required]),
-    //   password: new FormControl('',[Validators.required]),
-    // });
+
 
     usuarioForm: FormGroup;
     roles = config.roles;
@@ -49,6 +41,7 @@ export class AgrearusuariosComponent implements OnInit {
         tipoDocumento: [''],
         numeroDocumento: [''],
         password: [''],
+        login:['']
       });
     }
 
@@ -67,7 +60,7 @@ export class AgrearusuariosComponent implements OnInit {
             this.usuarioForm.reset();
           },
           error: (error) => {
-            Swal.fire('Error', `Error al crear el usuario, ${error}`, 'error');
+            Swal.fire('Error', `Error al crear el usuario, ${error.error.msg}`, 'error');
           },
         });
       } else {
@@ -79,38 +72,8 @@ export class AgrearusuariosComponent implements OnInit {
       }
     }
   
-  // crearusuario (){
-  //  const UsuarioNuevo = this.usuarioForm.value;
 
-  //     if(this.usuarioForm.valid) { 
-        
-  //       const data: UsuarioModel = {
-  //         nombre: UsuarioNuevo.nombre || '',
-  //         email: UsuarioNuevo.email || '',
-  //         tipoDocumento: UsuarioNuevo.tipoDocumento || '',
-  //         /*   formulario tiene un grupo de controles  cada input es un control*/
-  //         numeroDocumento: UsuarioNuevo.numerodeDocumento || '',
-  //         login: UsuarioNuevo.login || '',
-  //         password: UsuarioNuevo.password || '',
-  //         _id: '',
-  //         rol: '',
-  //         estado: false,
-  //         // creo objeto date
-  //         createdAt: new Date()
-  //       };
 
-  //     // le decimos al suscrubisrse que me de como tal la respuesta 
-  //       this.usuarioService.crearUsuario(data).subscribe({
-  //         next:(resp: any) => {
-  //         console.log('Usuario creado', resp);
-  //         },
-  //         error: (error:any) => {
-  //         console.log('Error al crear el usuario', error);
-  //         },
-  //       });
-  //       console.log('datos', this.usuarioForm.value)
-  //     }
-  //   }
     
   cerrarF() {
     this.cerrarform.emit(false);
