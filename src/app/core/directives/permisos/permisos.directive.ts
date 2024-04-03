@@ -79,12 +79,11 @@ export class PermisosDirective implements OnInit , OnDestroy {
     // Si se especifican permisos y el usuario tiene esos permisos, muestra el contenido
     this.viewContainer.createEmbeddedView(this.templateRef);
   }
-
-    else {
+     else {
        // En cualquier otro caso, oculta el contenido
       this.viewContainer.clear();
     }
-
+    
 
   }
  
