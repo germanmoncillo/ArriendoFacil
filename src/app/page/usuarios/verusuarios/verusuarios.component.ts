@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { UsuarioModel } from '../../../core/models/usuario.model';
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { Subscription } from 'rxjs';
@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class VerusuariosComponent implements OnInit, OnDestroy {
+  @ViewChild(AgrearusuariosComponent) agregarUsuariosComponent: AgrearusuariosComponent; //aqui le decimos que queremos ver al hijo(agregarusuarios) y con este viewcild podemos usar la funcion que agregamos allá!
 
   usuarioSubscription: Subscription
   usuarios: UsuarioModel[] = [];
@@ -28,6 +29,8 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
   roles = config.roles; 
   searchTerm: string = '';
   filteredData: any[] = [];
+
+  @Output() editarUsuarioEvent: EventEmitter<UsuarioModel> = new EventEmitter<UsuarioModel> ();
 
 // este va en el html
   usuarioEliminar: string = '';
@@ -98,7 +101,9 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
 
     funcionCerrar(){
       this.modalAbrir=false;
+      this.agregarUsuariosComponent.resetForm();
     }
+    
     funcionCerrar2(){
       this.modalAbrir2=false;
     }
@@ -138,6 +143,11 @@ export class VerusuariosComponent implements OnInit, OnDestroy {
         }
         return false;
       });
+    }
+
+    editarUsuario(usuario: UsuarioModel) {
+      this.funcionAbrir();
+      this.editarUsuarioEvent.emit(usuario);
     }
 
 }

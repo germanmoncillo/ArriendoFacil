@@ -1,6 +1,7 @@
 <div class="contenido">
     <form [formGroup]="usuarioForm" (submit)="crearUsuario(); cerrarF()" class="row g-3">
         <div class="col-md-6">
+            <input type="hidden" formControlName="_id">
             <label for="nombre" class="form-label">Nombre</label>
             <input 
                 type="text" 
@@ -47,7 +48,7 @@
         </div>
   
         <div class="col-12 mt-3">
-            <button type="submit" class="btn btn-primary">Crear Cliente</button>
+            <button type="submit" class="btn btn-primary">{{ editando ? 'Editar usuario' : 'Crear cliente' }}</button>
         </div>
     </form>
   </div>

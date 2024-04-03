@@ -45,6 +45,13 @@
             </select>
           </td>
           <td colspan="8" class="table-active">{{usuario.estado}}</td>
+          
+          <td colspan="9" class="table-active text-center" >
+            <a class="btn btn-outline-danger btn-sm m-2"
+            (click)="editarUsuario(usuario)">
+            Editar</a>
+          </td>
+
           <td colspan="9" class="table-active text-center"> 
             <a class="btn btn-outline-danger btn-sm m-2" 
             (click)="funcionAbrir2(usuario._id)">
@@ -88,3 +95,5 @@
     <button class="btn btn-primary"  (click)="eliminarUsuario(usuarioEliminar)" >Si amor</button>
     <button class="btn btn-primary"  (click)="funcionCerrar2()" >No amor</button>
 </app-modal>
+
+
