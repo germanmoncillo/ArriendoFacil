@@ -1,15 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './page/contacto/contacto.component';
-import { QuienesSomosComponent } from './page/quienes-somos/quienes-somos.component';
-import { VerclientesComponent } from './page/clientes/verclientes/verclientes.component';
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
-import { AgrearusuariosComponent } from './page/usuarios/agrearusuarios/agrearusuarios.component';
 import { VerusuariosComponent } from './page/usuarios/verusuarios/verusuarios.component';
 import { authGuard } from './guards/auth/auth.guard';
-import { UsuarioModel } from './core/models/usuario.model';
 import { MiarriendoComponent } from './page/miarriendo/miarriendo.component';
 import { PqrsComponent } from './page/pqrs/pqrs.component';
+import { VerinmueblesComponent } from './page/inmuebles/verinmuebles/verinmuebles.component';
 
 
 export const routes: Routes = [
@@ -51,7 +48,7 @@ export const routes: Routes = [
     {
         path: 'inmuebles',  // cyal es el path
         title: 'Mis inmuebles',// el nombre de la pagina
-        component: VerclientesComponent,   //componente como tal
+        component: VerinmueblesComponent,   //componente como tal
     },
     {
         path: 'usuarios',  // cual es el path

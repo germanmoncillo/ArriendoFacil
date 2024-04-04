@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-14">
+
+        <input type="text" [(ngModel)]="searchTerm" (keyup)="filterData()" placeholder="Buscar..." class="">
+
+  <table class="table table-dark">
+      <thead>
+      </thead>
+
+      <tbody>
+        <tr class="table-active">
+        </tr>
+        <tr>
+          
+        </tr>
+        <tr>
+          <th scope="row">id</th>
+          <td colspan="2" class="table-active">Tipo de inmueble</td>
+          <td colspan="3" class="table-active">Fecha de ingreso</td>
+          <td colspan="4" class="table-active">Fecha de pago</td>
+          <td colspan="5" class="table-active">Valor de pago</td>
+          <td colspan="6" class="table-active">Usuario</td>
+          <td colspan="7" class="table-active">Estado</td>
+          <td colspan="8" class="table-active text-center"></td>
+          <td colspan="9" class="table-active text-center">Acciones</td>
+        </tr>
+
+        @for (inmueble of filteredData; track $index) {
+
+        <tr>
+            <th scope="row">{{$index}}</th>
+            <td colspan="2" class="table-active">{{inmueble.tipoInmueble}}</td>
+            <td colspan="3" class="table-active">{{inmueble.fechaIngreso}}</td>
+            <td colspan="4" class="table-active">{{inmueble.fechaPago}}</td>
+            <td colspan="5" class="table-active">{{inmueble.valorPago}}</td>
+            <td colspan="6" class="table-active">{{inmueble.usuario}}</td>
+            <td colspan="7" class="table-active"> 
+              <select select
+              class="form-control"
+              [(ngModel)]="inmueble.estado" 
+              (change)="actualizarEstadoInmueble(inmueble)"
+              > 
+              @for (estado of estados; track $index) { 
+                <option [value]="estado">{{ estado }}</option>
+              } 
+              </select>
+              </td>
+            
+            <td colspan="8" class="table-active text-center" >
+              <a class="btn btn-outline-danger btn-sm m-2"
+              (click)="editarInmueble(inmueble)">
+              Editar</a>
+            </td>
+  
+            <td colspan="10" class="table-active text-center"> 
+              <a class="btn btn-outline-danger btn-sm m-2" 
+              (click)="funcionAbrir2(inmueble._id)">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="currentColor" 
+                class="w-1 h-1">
+                  <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                Eliminar</a> 
+            </td>
+    
+         </tr>
+        }
+      
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+<div>
+    <div class="col-md-auto" style="text-align: right;">  
+      <button class="btn btn-primary"  (click)="funcionAbrir()" >Agregar</button>
+    </div>
+      <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
+
+        <!-- <app-agregarinmuebles (cerrarform)="cerrarboton($event)" (mostrarInmueble)="recibirData($event)"></app-agregarinmuebles> -->
+        
+    </app-modal>
+</div>
+    <app-modal [aModal]="modalAbrir2" (cModalevent)="funcionCerrar2()">
+
+        <p>Estas seguro amor de eliminar el usuario</p>
+        <button class="btn btn-primary"  (click)="eliminarInmueble(inmuebleEliminar)" >Si amor</button>
+        <button class="btn btn-primary"  (click)="funcionCerrar2()" >No amor</button>
+    </app-modal>

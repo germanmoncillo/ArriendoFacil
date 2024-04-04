@@ -2,3 +2,8 @@ export enum ROLES {
     ADMIN = 'ADMIN',
     ARRENDATARIO = 'ARRENDATARIO',
 }
+
+export enum ESTADO {
+    DISPONIBLE = 'DISPONIBLE',
+    ARRENDADO = 'ARRENDADO',
+}
