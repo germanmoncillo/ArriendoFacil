@@ -38,8 +38,7 @@ export class InmueblesService {
   }
   
   actualizarInmueble(inmueble: InmuebleModel) {
-    return this.httpClient.put(`${base_url}/inmueble/${inmueble._id}`, this.headers);
+    return this.httpClient.put(`${base_url}/inmueble/${inmueble._id}`, inmueble, this.headers);
   }
-
 
 }

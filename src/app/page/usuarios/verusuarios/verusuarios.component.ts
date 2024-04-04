@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class VerusuariosComponent implements OnInit, OnDestroy {
+  
   @ViewChild(AgrearusuariosComponent) agregarUsuariosComponent: AgrearusuariosComponent; //aqui le decimos que queremos ver al hijo(agregarusuarios) y con este viewcild podemos usar la funcion que agregamos allá!
 
   usuarioSubscription: Subscription

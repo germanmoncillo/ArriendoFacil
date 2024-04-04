@@ -1,5 +1,8 @@
 <div class="contenido">
     <form [formGroup]="inmuebleForm" (submit)="crearInmueble(); cerrarF()" class="row g-3">
+
+        @for (inmueble of filteredData; track $index) {}
+
         <div class="col-md-6">
             <input type="hidden" formControlName="_id">
             <label for="tipoInmueble" class="form-label">Tipo de inmueble</label>
@@ -22,10 +25,8 @@
                 formControlName="fechaPago" 
                 class="form-control" 
                 placeholder="Ingrese la fecha pago">
-        </div>
-        
-        @for (inmueble of filteredData; track $index) {}
-
+        </div> 
+       
         <div class="col-md-6">
             <label for="valorPago" class="form-label">Valor de pago</label>
             <input 
@@ -40,19 +41,20 @@
                 formControlName="estado" 
                 class="form-control" 
                 placeholder="Ingrese el estado del inmueble">
-  
-            <label for="usuario" class="form-label">Usuario arrendatario</label>
-            <select 
-            class="form-control"
-            [(ngModel)]="usuario.nombre">
-            @for (nombre of inmuebles; track $index) {
-                <option [value]="inmuebles.usuario.nombre">{{ nombre }}</option>
-            }
+            
+            <label for="usuario" class="form-label">{{ editando ? 'Editar arrendatario' : 'Asignar arrendatario' }}</label>
+                <select 
+                class="form-control" 
+                formControlName="usuario" 
+                name="usuario">
+                @for (usuario of usuarios; track $index) {
+                    @if(usuario.rol === 'ARRENDATARIO') { 
+                    <option [value]="usuario._id">{{ usuario.nombre }}</option>
+                    }
+                }
             </select>
-                
 
-
-        </div>
+        </div>  
   
         <div class="col-12 mt-3">
             <button type="submit" class="btn btn-primary">{{ editando ? 'Editar inmueble' : 'Crear inmueble' }}</button>

@@ -8,7 +8,6 @@ import { InmueblesService } from '../../../services/inmuebles/inmuebles.service'
 import { AutenticacionService } from '../../../services/autenticacion/autenticacion.service';
 import { Router } from '@angular/router';
 import { UsuarioModel } from '../../../core/models/usuario.model';
-import { appConfig } from '../../../app.config';
 import { config } from '../../../../environments/configuration/config';
 import { InmuebleInterface } from '../../../core/interfaces/inmueble.interface';
 import Swal from 'sweetalert2';
@@ -20,6 +19,7 @@ import Swal from 'sweetalert2';
   templateUrl: './verinmuebles.component.html',
   styleUrl: './verinmuebles.component.css'
 })
+
 export class VerinmueblesComponent implements OnInit, OnDestroy {
 
   @ViewChild(AgregarinmueblesComponent) agregarInmueblesComponent: AgregarinmueblesComponent; //aqui le decimos que queremos ver al hijo(agregarusuarios) y con este viewcild podemos usar la funcion que agregamos allá!
@@ -37,7 +37,7 @@ export class VerinmueblesComponent implements OnInit, OnDestroy {
 
 // este va en el html
   inmuebleEliminar: string = '';
-usuarios: any;
+  usuarios: any;
 
   constructor (  
     private inmuebleService: InmueblesService,
@@ -46,7 +46,7 @@ usuarios: any;
   ) {}
 
   ngOnInit(): void {
-    this.usuarioLogin = this.autenticacionService.usuario;
+    this.usuarioLogin = this.autenticacionService.usuario; //para realizar una autentificación del usuario que crea esto
     this.cargarInmuebles();
   }
 
@@ -62,24 +62,19 @@ usuarios: any;
     this.inmuebleSubscription = this.inmuebleService.consultarInmueble().subscribe((resp: any) => {
       this.inmuebles = resp.inmuebles;
       this.filteredData = this.inmuebles;
-      console.log("inmuebles", this.inmuebles)
     });
   }
 
   eliminarInmueble(id: string) {
-    if (id === this.inmueble._id) {
-      Swal.fire('Error!', 'No puede eliminar este usuario', 'error');
-    } else {
-      this.inmuebleService.eliminarInmueble(id).subscribe((resp: any) => {
-        this.cargarInmuebles();
-        Swal.fire(
-          'Eliminado',
-          `Se elimino el inmueble ${resp.inmueble.tipoInmueble}`,
-          'success'
-        );
-        this.funcionCerrar2();
-      });
-    }
+    this.inmuebleService.eliminarInmueble(id).subscribe(() => {
+      this.cargarInmuebles();
+      Swal.fire(
+        'Eliminado',
+        `Se elimino el inmueble`,
+        'success'
+      );
+    this.funcionCerrar2();
+    });
   }
 
   actualizarEstadoInmueble(inmueble: InmuebleModel) {
@@ -101,14 +96,14 @@ usuarios: any;
       this.modalAbrir=true;
     }
 
-    funcionAbrir2(user:string){
+    funcionAbrir2(inmueble: InmuebleModel){
       this.modalAbrir2=true;
-      this.inmuebleEliminar=user;
+      this.inmuebleEliminar=inmueble._id;
     }
 
     funcionCerrar(){
       this.modalAbrir=false;
-      // this.agregarInmueblesComponent.resetForm();
+      this.agregarInmueblesComponent.resetForm();
     }
     
     funcionCerrar2(){

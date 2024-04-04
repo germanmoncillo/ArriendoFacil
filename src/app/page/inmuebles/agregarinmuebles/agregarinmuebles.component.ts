@@ -8,6 +8,9 @@ import { InmueblesService } from '../../../services/inmuebles/inmuebles.service'
 import { VerusuariosComponent } from '../../usuarios/verusuarios/verusuarios.component';
 import { VerinmueblesComponent } from '../verinmuebles/verinmuebles.component';
 import Swal from 'sweetalert2';
+import { UsuariosService } from '../../../services/usuarios/usuarios.service';
+import { UsuarioModel } from '../../../core/models/usuario.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-agregarinmuebles',
@@ -16,6 +19,7 @@ import Swal from 'sweetalert2';
   templateUrl: './agregarinmuebles.component.html',
   styleUrl: './agregarinmuebles.component.css'
 })
+
 export class AgregarinmueblesComponent implements OnInit {
 
   inmuebleForm: FormGroup;
@@ -23,14 +27,18 @@ export class AgregarinmueblesComponent implements OnInit {
   editando: boolean = false;
   filteredData: any[] = [];
   inmuebles: InmuebleModel[] = [];
+  usuarios: UsuarioModel[] = []; 
+  usuarioSeleccionado: string = ''; 
+  inmuebleUsuarioSubscription: Subscription
+  usuario: any;
 
   @Output () mostrarInmueble: EventEmitter<InmuebleInterface> = new EventEmitter<InmuebleInterface>();
   @Output () cerrarform: EventEmitter<boolean> = new EventEmitter<boolean>;
-usuario: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private inmuebleService: InmueblesService,
+    private usuarioService: UsuariosService,
     private verinmuebleComponent: VerinmueblesComponent
   ){}
 
@@ -45,8 +53,21 @@ usuario: any;
       usuario: [''],     
     });
 
+    this.obtenerInmuebles();
+    
+    this.obtenerUsuarios();
+  }
+
+  obtenerInmuebles() {
     this.verinmuebleComponent.editarInmuebleEvent.subscribe((inmueble: InmuebleModel) => {
       this.editarInmuebleSeleccionado(inmueble);
+    });
+  }
+
+  obtenerUsuarios() {
+    this.usuarioService.getUsuarios().subscribe((data: any) => {
+      this.usuarios = data.usuarios;
+      console.log("obtuve los usuarios", this.usuarios)
     });
   }
 
@@ -93,9 +114,16 @@ usuario: any;
 
   editarInmuebleSeleccionado(inmueble: InmuebleModel) {
     this.inmuebleForm.patchValue(inmueble);
-    this.filteredData = this.inmuebles; 
     this.editando = true; 
   }
+
+  // cargarUsuariosInmuebles() {
+  //   this.editando = true; 
+  //   this.inmuebleUsuarioSubscription = this.inmuebleService.consultarInmueble().subscribe((resp: any) => {
+  //     this.inmuebles = resp.inmuebles.nombre;
+  //     this.filteredData = this.inmuebles;
+  //   }); 
+  // }
 
   resetForm() {
     this.inmuebleForm.reset(); // Restablecer el formulario
