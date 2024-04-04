@@ -24,6 +24,8 @@
                 placeholder="Ingrese la fecha pago">
         </div>
         
+        @for (inmueble of filteredData; track $index) {}
+
         <div class="col-md-6">
             <label for="valorPago" class="form-label">Valor de pago</label>
             <input 
@@ -40,11 +42,16 @@
                 placeholder="Ingrese el estado del inmueble">
   
             <label for="usuario" class="form-label">Usuario arrendatario</label>
-            <input 
-                type="text" 
-                formControlName="usuario" 
-                class="form-control" 
-                placeholder="Ingrese el nombre del usuario">
+            <select 
+            class="form-control"
+            [(ngModel)]="usuario.nombre">
+            @for (nombre of inmuebles; track $index) {
+                <option [value]="inmuebles.usuario.nombre">{{ nombre }}</option>
+            }
+            </select>
+                
+
+
         </div>
   
         <div class="col-12 mt-3">

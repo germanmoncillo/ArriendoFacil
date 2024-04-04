@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { InmuebleModel } from '../../../core/models/inmueble.model';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { config } from '../../../../environments/configuration/config';
 import { InmuebleInterface } from '../../../core/interfaces/inmueble.interface';
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-agregarinmuebles',
   standalone: true,
-  imports: [ReactiveFormsModule, AgregarinmueblesComponent, ModalComponent],
+  imports: [ReactiveFormsModule, AgregarinmueblesComponent, ModalComponent, FormsModule],
   templateUrl: './agregarinmuebles.component.html',
   styleUrl: './agregarinmuebles.component.css'
 })
@@ -21,9 +21,12 @@ export class AgregarinmueblesComponent implements OnInit {
   inmuebleForm: FormGroup;
   estados = config.estado;
   editando: boolean = false;
+  filteredData: any[] = [];
+  inmuebles: InmuebleModel[] = [];
 
   @Output () mostrarInmueble: EventEmitter<InmuebleInterface> = new EventEmitter<InmuebleInterface>();
   @Output () cerrarform: EventEmitter<boolean> = new EventEmitter<boolean>;
+usuario: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -90,6 +93,7 @@ export class AgregarinmueblesComponent implements OnInit {
 
   editarInmuebleSeleccionado(inmueble: InmuebleModel) {
     this.inmuebleForm.patchValue(inmueble);
+    this.filteredData = this.inmuebles; 
     this.editando = true; 
   }
 
