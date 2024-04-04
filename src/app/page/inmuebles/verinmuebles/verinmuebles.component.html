@@ -35,8 +35,9 @@
             <td colspan="4" class="table-active">{{inmueble.fechaPago}}</td>
             <td colspan="5" class="table-active">{{inmueble.valorPago}}</td>
             <td colspan="6" class="table-active">{{inmueble.usuario.nombre}}</td>
+
             <td colspan="7" class="table-active"> 
-              <select select
+              <select git
               class="form-control"
               [(ngModel)]="inmueble.estado" 
               (change)="actualizarEstadoInmueble(inmueble)"

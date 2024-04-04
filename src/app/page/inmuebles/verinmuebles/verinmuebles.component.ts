@@ -37,6 +37,7 @@ export class VerinmueblesComponent implements OnInit, OnDestroy {
 
 // este va en el html
   inmuebleEliminar: string = '';
+usuarios: any;
 
   constructor (  
     private inmuebleService: InmueblesService,
