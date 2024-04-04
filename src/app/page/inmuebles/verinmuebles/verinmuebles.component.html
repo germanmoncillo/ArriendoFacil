@@ -34,7 +34,7 @@
             <td colspan="3" class="table-active">{{inmueble.fechaIngreso}}</td>
             <td colspan="4" class="table-active">{{inmueble.fechaPago}}</td>
             <td colspan="5" class="table-active">{{inmueble.valorPago}}</td>
-            <td colspan="6" class="table-active">{{inmueble.usuario}}</td>
+            <td colspan="6" class="table-active">{{inmueble.usuario.nombre}}</td>
             <td colspan="7" class="table-active"> 
               <select select
               class="form-control"
@@ -85,7 +85,7 @@
     </div>
       <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
 
-        <!-- <app-agregarinmuebles (cerrarform)="cerrarboton($event)" (mostrarInmueble)="recibirData($event)"></app-agregarinmuebles> -->
+        <app-agregarinmuebles (cerrarform)="cerrarboton($event)" (mostrarInmueble)="recibirData($event)"></app-agregarinmuebles>
         
     </app-modal>
 </div>

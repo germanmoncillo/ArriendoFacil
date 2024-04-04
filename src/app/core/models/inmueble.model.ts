@@ -1,3 +1,5 @@
+import { UsuarioInmuebleInterface } from "../interfaces/usuario";
+
 export class InmuebleModel {
 
     constructor(
@@ -7,7 +9,7 @@ export class InmuebleModel {
         public fechaPago: Date,
         public valorPago: number,
         public estado: string,
-        public usuario: string, // Schema.Types.ObjectId,
+        public usuario: UsuarioInmuebleInterface, 
         public createdAt: Date,
         public updatedAt: Date, 
     ){}

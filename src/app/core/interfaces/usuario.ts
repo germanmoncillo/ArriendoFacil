@@ -10,3 +10,10 @@ export interface UsuarioInterface {
     estado:  boolean;
     createdAt: Date,
 }
+
+export interface UsuarioInmuebleInterface {
+    login: string,
+    nombre: string,
+    rol: string,
+    _id:string,
+}

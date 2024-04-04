@@ -1,54 +1,54 @@
-<!-- <div class="contenido">
-    <form [formGroup]="usuarioForm" (submit)="crearUsuario(); cerrarF()" class="row g-3">
+<div class="contenido">
+    <form [formGroup]="inmuebleForm" (submit)="crearInmueble(); cerrarF()" class="row g-3">
         <div class="col-md-6">
             <input type="hidden" formControlName="_id">
-            <label for="nombre" class="form-label">Nombre</label>
+            <label for="tipoInmueble" class="form-label">Tipo de inmueble</label>
             <input 
                 type="text" 
-                formControlName="nombre" 
+                formControlName="tipoInmueble" 
                 class="form-control" 
-                placeholder="Ingrese el Nombre del Cliente">
+                placeholder="Ingrese el tipo de inmueble">
   
-            <label for="email" class="form-label">Email</label>
-            <input 
-                type="email" 
-                formControlName="email" 
-                class="form-control" 
-                placeholder="Ingrese el email">
-  
-            <label for="TipoDocumento" class="form-label">Tipo de Documento</label>
+            <label for="fechaIngreso" class="form-label">Fecha de ingreso</label>
             <input 
                 type="text" 
-                formControlName="tipoDocumento" 
+                formControlName="fechaIngreso" 
                 class="form-control" 
-                placeholder="Ingrese el tipo de documento">
+                placeholder="Ingrese la fecha inicio">
+  
+            <label for="fechaPago" class="form-label">Fecha de pago</label>
+            <input 
+                type="text" 
+                formControlName="fechaPago" 
+                class="form-control" 
+                placeholder="Ingrese la fecha pago">
         </div>
         
         <div class="col-md-6">
-            <label for="numeroDocumento" class="form-label">Número de documento</label>
+            <label for="valorPago" class="form-label">Valor de pago</label>
             <input 
                 type="text" 
-                formControlName="numeroDocumento"  
+                formControlName="valorPago"  
                 class="form-control" 
-                placeholder="Ingrese el número de documento">
+                placeholder="Ingrese el valor a pagar">
   
-            <label for="login" class="form-label">Nombre de usuario</label>
+            <label for="estado" class="form-label">Estado</label>
             <input 
                 type="text" 
-                formControlName="login" 
+                formControlName="estado" 
                 class="form-control" 
-                placeholder="Ingrese Nombre de usuario">
+                placeholder="Ingrese el estado del inmueble">
   
-            <label for="password" class="form-label">Contraseña</label>
+            <label for="usuario" class="form-label">Usuario arrendatario</label>
             <input 
-                type="password" 
-                formControlName="password" 
+                type="text" 
+                formControlName="usuario" 
                 class="form-control" 
-                placeholder="Ingrese la contraseña">
+                placeholder="Ingrese el nombre del usuario">
         </div>
   
         <div class="col-12 mt-3">
-            <button type="submit" class="btn btn-primary">{{ editando ? 'Editar usuario' : 'Crear cliente' }}</button>
+            <button type="submit" class="btn btn-primary">{{ editando ? 'Editar inmueble' : 'Crear inmueble' }}</button>
         </div>
     </form>
-  </div> -->
+  </div>
