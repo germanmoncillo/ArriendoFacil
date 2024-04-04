@@ -34,7 +34,7 @@ export class AgrearusuariosComponent implements OnInit {
     private formBuilder: FormBuilder,
     private usuarioService: UsuariosService,
     private verusuariosComponent: VerusuariosComponent
-    ){}
+  ){}
 
     ngOnInit(): void {
       this.usuarioForm = this.formBuilder.group({
@@ -48,9 +48,8 @@ export class AgrearusuariosComponent implements OnInit {
       });
 
       this.verusuariosComponent.editarUsuarioEvent.subscribe((usuario: UsuarioModel) => {
-      this.editarUsuarioSeleccionado(usuario);
-  });
-      
+        this.editarUsuarioSeleccionado(usuario);
+      });
     }
   
     crearUsuario() {

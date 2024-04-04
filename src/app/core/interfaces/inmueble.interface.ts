@@ -1,3 +1,5 @@
+import { UsuarioInmuebleInterface } from "./usuario";
+
 export class InmuebleInterface {
     _id: string; 
     tipoInmueble: string;
@@ -5,7 +7,7 @@ export class InmuebleInterface {
     fechaPago: Date;
     valorPago: number;
     estado: string;
-    usuario: string; // Schema.Types.ObjectId,
+    usuario: UsuarioInmuebleInterface; 
     createdAt: Date;
     updatedAt: Date;
 }

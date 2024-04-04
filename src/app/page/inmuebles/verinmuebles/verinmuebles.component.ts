@@ -61,6 +61,7 @@ export class VerinmueblesComponent implements OnInit, OnDestroy {
     this.inmuebleSubscription = this.inmuebleService.consultarInmueble().subscribe((resp: any) => {
       this.inmuebles = resp.inmuebles;
       this.filteredData = this.inmuebles;
+      console.log("inmuebles", this.inmuebles)
     });
   }
 
