@@ -1,0 +1,67 @@
+
+.card {
+
+    /* ancho de la tarjeta */
+    max-width: 600px;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+
+}
+
+.inner-card {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+   
+    
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+   
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.small-text {
+    font-size: 14px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-bottom: 20px;
+    
+}
+
+
+
+.inner-card img {
+    width: 100%;
+    height: 500px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .inner-card-content {
+    padding: 10px;
+   
+    
+  }
