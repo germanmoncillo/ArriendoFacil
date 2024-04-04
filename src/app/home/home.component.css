@@ -15,15 +15,18 @@
    
     left: 30%;
     transform: translateX(-70%);
-    color: white; /* Color del texto */
+    color: white; 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 15px 40px;
-    border-radius: 10px; /* Bordes redondeados */
-    font-size: 24px; /* Tamaño del texto */
-    font-weight: bold; /* Negrita */
+    border-radius: 10px; 
+    /* Tamaño del texto */
+    font-size: 24px; 
+    /* Negrita */
+    font-weight: bold; 
     bottom: 200px;
-    width: 500px; /* ancho recuadro*/
+    /* ancho recuadro*/
+    width: 500px; 
   
 }
 
@@ -31,34 +34,40 @@
 
 .vive-card {
     position: relative;
-    top: -70px; /* Ajusta la posición vertical según sea necesario */
-    left: 100px; /* Ajusta la posición horizontal según sea necesario */
-    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
-    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
-    border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
-    padding: 20px; /* Ajusta el espacio interior según sea necesario */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
-    margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+    /* Ajusta la posición vertical según sea necesario */
+    top: -70px; 
+    /* Ajusta la posición horizontal según sea necesario */
+    left: 100px; 
+    /* Ajusta el ancho restando el espacio de los márgenes */
+    width: calc(100% - 200px); 
+    /* Color de fondo con transparencia */
+    background-color: rgba(255, 255, 255, 0.8); 
+     /* Ajusta la esquina redondeada según sea necesario */
+    border-radius: 10px;
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px; /*emuje*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); 
   
 }
 
 .card-header {
-    background-color: rgba(4, 40, 79, 0.7); /* Color de fondo del encabezado de la tarjeta con transparencia */
-    color: white; /* Texto blanco para contraste */
-    padding: 10px; /* Ajuste de espacio interior */
-    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
-    text-align: center; /* Centra el texto horizontalmente */
-  font-weight: bold; /* Aplica negrita al texto */
-  font-family: Arial, sans-serif; /* Establece la fuente Arial */
+    background-color: rgba(4, 40, 79, 0.7); 
+    color: white; 
+    padding: 10px;
+    border-radius: 10px 10px 0 0; 
+    /* Centra el texto horizontalmente */
+    text-align: center; 
+  font-weight: bold; 
+  font-family: Arial, sans-serif; 
   }
 
   .card-body {
-    padding: 20px; /* Ajuste de espacio interior */
+    padding: 20px; 
   }
 
   .carousel-indicators {
-    bottom: 50px; /* ajuste de parte superior */
+    bottom: 50px; 
 
 }
 .btn-secondary {
@@ -78,15 +87,18 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -30px; /* Ajusta la posición vertical según sea necesario */
-    left: 100px; /* Ajusta la posición horizontal según sea necesario */
-    width: calc(100% - 200px); /* Ajusta el ancho restando el espacio de los márgenes */
-    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
-    border-radius: 10px; /* Ajusta la esquina redondeada según sea necesario */
-    padding: 20px; /* Ajusta el espacio interior según sea necesario */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar la tarjeta */
-    margin-bottom: 30px; /* Empuja hacia abajo el pie de página */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+    top: -30px; 
+    left: 100px;
+    width: calc(100% - 200px); 
+    background-color: rgba(255, 255, 255, 0.8); 
+    /* Ajusta la esquina redondeada según sea necesario */
+    border-radius: 10px; 
+    /* Ajusta el espacio interior según sea necesario */
+    padding: 20px; 
+    /* Añade sombra para resaltar la tarjeta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); 
   }
   
   .inner-cards-container {
@@ -96,7 +108,8 @@
   .inner-card {
     flex: 1;
     margin: 10px;
-    max-width: calc(100% / 3 - 20px); /* Distribuye el espacio equitativamente */
+    /* Distribuye el espacio equitativamente */
+    max-width: calc(100% / 3 - 20px); 
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

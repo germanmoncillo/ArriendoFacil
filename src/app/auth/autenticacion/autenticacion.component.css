@@ -3,24 +3,29 @@
 
 /* Agrega la imagen de fondo */
 .background-image {
-    background-image: url('../../../assets/fondo 1.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-    /* Otros estilos opcionales */
+    background-image: url('../../../assets/fondo 1.jpg'); 
+    /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-size: cover; 
+    
   }
 
-/* Definición de colores personalizados */
+
 .barra-inicio-sesion {
-    background-color: #021E3D; /* Color de fondo naranja */
-    color: #021E3D; /* Color de texto blanco */
-    /* animation: border-animation 2s infinite; Duración de la animación: 2 segundos; repetir infinitamente */;
+    /* Color de fondo naranja */
+    background-color: #021E3D; 
+    /* Color de texto blanco */
+    color: #021E3D; 
+ 
 }
 
 
 .animated-form {
-    animation: fadeInUp 1s ease forwards; /* Animación de desvanecimiento y deslizamiento hacia arriba */
+    /* Animación de desvanecimiento y deslizamiento hacia arriba */
+    animation: fadeInUp 1s ease forwards; 
     opacity: 0; /* Inicialmente oculto */
-    transform: translateY(-50px); /* Desplazamiento hacia arriba */
-    box-shadow: 0 25px 50px rgba(33, 48, 210, 0.9); /* Sombreado de color CF6A8C */
+    /* Desplazamiento hacia arriba */
+    transform: translateY(-50px); 
+    box-shadow: 0 25px 50px rgba(33, 48, 210, 0.9); 
 }
 
 @keyframes fadeInUp {
@@ -36,9 +41,9 @@
 
 .boton-iniciar-sesion {
     
-    background-color: #CF6A8C; /* Color de fondo */
-    border-color: #CF6A8C; /* Color del borde */
-    box-shadow: 0 0 10px #021121; /* Efecto de sombra */
+    background-color: #CF6A8C; 
+    border-color: #CF6A8C; 
+    box-shadow: 0 0 10px #021121; 
 }
 
         /* Estilos personalizados */
