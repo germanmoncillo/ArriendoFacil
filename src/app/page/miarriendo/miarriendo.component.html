@@ -39,7 +39,7 @@
                             </div>
                             <div class="inner-card-content">
                                 <h3>CASAS</h3>
-                                <p>CASA OPCION 1.</p>
+                                <p>{{usuario.tipoInmueble}}</p>
                             </div>
                             
                         </div>
@@ -59,19 +59,19 @@
 
                 <div class="detail-box highlight1">
                     <div class="detail-title">Valor de Arriendo:</div>
-                    <div class="detail-value">{{usuario.valorPago}}</div>
+                    <div class="detail-value">${{usuario.valorPago}}</div>
                 </div>
                 <div class="detail-box highlight2">
                     <div class="detail-title">Estado:</div>
-                    <div class="detail-value">Activo</div>
+                    <div class="detail-value">{{usuario.estado}}</div>
                 </div>
                 <div class="detail-box highlight">
                     <div class="detail-title">Fecha de Ingreso:</div>
-                    <div class="detail-value">DD/MM/AAAA</div>
+                    <div class="detail-value">{{usuario.fechaIngreso}}</div>
                 </div>
                 <div class="detail-box highlight">
-                    <div class="detail-title">Fecha de Vencimiento:</div>
-                    <div class="detail-value">DD/MM/AAAA</div>
+                    <div class="detail-title">Fecha de Pago:</div>
+                    <div class="detail-value">{{usuario.fechaPago}}</div>
                 </div>
             </div>
         </div>
