@@ -4,9 +4,13 @@
 
         <div>
           
+          <div class="search-box">
+            <input type="text" [(ngModel)]="searchTerm" (keyup)="filterData()" placeholder="Buscar..." class="form-control">
+            <span class="input-group-text" id="search-icon">
+              <i class="fa fa-search"></i>
+              
+          </span>
         </div>
-        <input type="text" [(ngModel)]="searchTerm" (keyup)="filterData()" placeholder="Buscar..." class="">
-
   <table class="table table-dark">
       <thead>
       </thead>
