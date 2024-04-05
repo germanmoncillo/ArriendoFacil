@@ -41,4 +41,8 @@ export class InmueblesService {
     return this.httpClient.put(`${base_url}/inmueble/${inmueble._id}`, inmueble, this.headers);
   }
 
+  consultarUsuarioInmueble(id: string) {
+    return this.httpClient.get(`${base_url}/arriendo/${id}`, this.headers);
+  }
+
 }

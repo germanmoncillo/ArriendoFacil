@@ -5,14 +5,14 @@
 <div  class="container-full-height">
 
  
- 
+@if (usuario) {
         <div class="flex-container">
                 <div class="card" >
                     <div class="inner-card" >
                         <div class="title">
                             <div class="name-wrapper">
                                 <span class="small-text">Hola,</span>
-                                <span> Jaime Cabrera</span>
+                                <span> {{usuario.usuario.nombre}} </span>
                             </div>
                         </div>
                         <div class="inner-card">
@@ -59,7 +59,7 @@
 
                 <div class="detail-box highlight1">
                     <div class="detail-title">Valor de Arriendo:</div>
-                    <div class="detail-value">$XXX</div>
+                    <div class="detail-value">{{usuario.valorPago}}</div>
                 </div>
                 <div class="detail-box highlight2">
                     <div class="detail-title">Estado:</div>
@@ -80,7 +80,7 @@
 
 
         </div>
-
+    }
          
     </div>
 </body>
