@@ -1,0 +1,77 @@
+
+
+
+/* Agrega la imagen de fondo */
+.background-image {
+    background-image: url('../../../assets/fondo10.jpg'); 
+    /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-size: cover; 
+    
+  }
+
+
+.barra-Formulario {
+    /* Color de fondo naranja */
+    background-color: #021E3D; 
+    /* Color de texto blanco */
+    color: #021E3D; 
+ 
+}
+
+
+.animated-form {
+    /* Animación de desvanecimiento y deslizamiento hacia arriba */
+    animation: fadeInUp 1s ease forwards; 
+    opacity: 0; /* Inicialmente oculto */
+    /* Desplazamiento hacia arriba */
+    transform: translateY(-50px); 
+    box-shadow: 0 25px 50px rgba(33, 48, 210, 0.9); 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Desplazamiento hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Sin desplazamiento */
+    }
+}
+
+.boton-enviarmensaje {
+    
+    background-color: #CF6A8C; 
+    border-color: #CF6A8C; 
+    box-shadow: 0 0 10px #021121; 
+}
+
+        /* Estilos personalizados */
+        .container-full-height {
+            height: 100vh; /* Establece la altura al 100% del viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+       
+
+
+
+
+        /* Cambia el color del texto y el fondo del botón cuando el cursor está sobre él */
+.boton-enviarmensaje:hover {
+    box-shadow: 0 0 20px #e1799b; /* Efecto de sombra más intenso al pasar el cursor */
+    color: #fff; /* Color del texto */
+}
+
+
+
+
+
+        /* Cambia el color del texto y el fondo del botón cuando el cursor está sobre él */
+.boton-enviarmensaje:hover {
+    box-shadow: 0 0 20px #e1799b; /* Efecto de sombra más intenso al pasar el cursor */
+    color: #fff; /* Color del texto */
+}
+
