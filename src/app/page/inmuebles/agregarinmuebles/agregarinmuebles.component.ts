@@ -67,7 +67,6 @@ export class AgregarinmueblesComponent implements OnInit {
   obtenerUsuarios() {
     this.usuarioService.getUsuarios().subscribe((data: any) => {
       this.usuarios = data.usuarios;
-      console.log("obtuve los usuarios", this.usuarios)
     });
   }
 

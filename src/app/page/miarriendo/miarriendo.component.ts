@@ -9,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class MiarriendoComponent {
 
+  //crear inmueble
+  // inmueble: inmuebleModel;  
+
+  //desde getUnInmueble;
+
+  //ngOninit 
+  //agarrar id (directive)
+
+
+
+
+
 }

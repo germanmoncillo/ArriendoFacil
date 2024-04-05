@@ -66,7 +66,8 @@ export class VerinmueblesComponent implements OnInit, OnDestroy {
   }
 
   eliminarInmueble(id: string) {
-    this.inmuebleService.eliminarInmueble(id).subscribe(() => {
+    this.inmuebleService.eliminarInmueble(id).subscribe( {
+      next: () => {
       this.cargarInmuebles();
       Swal.fire(
         'Eliminado',
@@ -74,6 +75,14 @@ export class VerinmueblesComponent implements OnInit, OnDestroy {
         'success'
       );
     this.funcionCerrar2();
+    },
+      error: (error) => {
+      Swal.fire(
+      'Error',
+      error.error.msg,
+      'error',      
+      ) 
+      }
     });
   }
 
