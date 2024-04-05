@@ -5,5 +5,4 @@ export enum ROUTER_APP {
     INMUEBLES='inicio/inmuebles',
     USUARIOS='inicio/usuarios',
     MIARRIENDO= 'inicio/miarriendo',
-    PQRS= 'inicio/pqrs',
 }

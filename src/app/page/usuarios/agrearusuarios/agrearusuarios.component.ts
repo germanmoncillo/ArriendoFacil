@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output, afterNextRender } from 
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { UsuarioInterface } from '../../../core/interfaces/usuario';
-import { AgregarclientesComponent } from '../../clientes/agregarclientes/agregarclientes.component';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { config } from '../../../../environments/configuration/config';
 import Swal from 'sweetalert2';
@@ -12,7 +11,7 @@ import { VerusuariosComponent } from '../verusuarios/verusuarios.component';
 @Component({
   selector: 'app-agrearusuarios',
   standalone: true,
-  imports: [ReactiveFormsModule, AgregarclientesComponent, ModalComponent],
+  imports: [ReactiveFormsModule, ModalComponent],
   templateUrl: './agrearusuarios.component.html',
   styleUrl: './agrearusuarios.component.css'
 })

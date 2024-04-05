@@ -5,7 +5,6 @@ import { AutenticacionComponent } from './auth/autenticacion/autenticacion.compo
 import { VerusuariosComponent } from './page/usuarios/verusuarios/verusuarios.component';
 import { authGuard } from './guards/auth/auth.guard';
 import { MiarriendoComponent } from './page/miarriendo/miarriendo.component';
-import { PqrsComponent } from './page/pqrs/pqrs.component';
 import { VerinmueblesComponent } from './page/inmuebles/verinmuebles/verinmuebles.component';
 
 
@@ -60,17 +59,6 @@ export const routes: Routes = [
         title: 'Mi arriendo',
         component: MiarriendoComponent,
     },
-    {
-        path: 'pqrs',
-        title: 'pqrs',
-        component: PqrsComponent,
-    },
-    // {
-    //     path: 'login',  // cyal es el path o ruta
-    //     title: 'Autenticacion',// el nombre de la pagina
-    //     component: AutenticacionComponent,   //componente como tal
-    // }
-
 ],
 },
 // si no cuenta con la ruta , redirecciona al login
